@@ -1,0 +1,26 @@
+{
+  "name": "sportsfestival2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tomoro0726/SportsFestival2022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tomoro0726/SportsFestival2022/issues"
+  },
+  "homepage": "https://github.com/Tomoro0726/SportsFestival2022#readme",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.18.0",
+    "nodemon": "^2.0.15",
+    "sql": "^0.78.0"
+  }
+}
