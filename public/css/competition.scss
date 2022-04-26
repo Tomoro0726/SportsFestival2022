@@ -4,10 +4,23 @@
 }
 body{
   font-family: Noto;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform:translateX(-50%);
+  margin: auto;
   table {
     border-collapse: collapse;
+    width: 80vw;
+    margin-bottom: 4vh;
   }
   th, td {
     border: 1px solid #333;
+    font-size: 1.6vw;
+    text-align: center;
+    padding: 8px;
+  }
+  .new{
+    font-size: 1.6vw;
   }
 }

@@ -5,12 +5,27 @@
 
 body {
   font-family: Noto;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin: auto;
 }
 
 body table {
   border-collapse: collapse;
+  width: 80vw;
+  margin-bottom: 4vh;
 }
 
 body th, body td {
   border: 1px solid #333;
+  font-size: 1.6vw;
+  text-align: center;
+  padding: 8px;
+}
+
+body .new {
+  font-size: 1.6vw;
 }
