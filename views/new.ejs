@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <form action="" method="get">
+  <form method="post" action="/newcompetition">
     <table>
       <tr>
         <th class="top_name">競技名</th>
@@ -25,32 +25,31 @@
         <th class="top_zyunni">6位</th>
         <th class="top_zyunni">7位</th>
         <th class="top_zyunni">8位</th>
-        <th class="top_tokki">特記事項</th>
-  
-  
+
+
       </tr>
       <tr>
-        <td><input type="text" class="text"></td>
-        <td><select name="prefecture" class="text2">
-          <option></option>
+        <td><input type="text" class="text" name="competition_name"></td>
+        <td><select name="competition_grade" class="text2">
+            <option></option>
 
-          <option>H1</option>
-          <option>H2</option>
-          <option>H3</option>
+            <option>H1</option>
+            <option>H2</option>
+            <option>H3</option>
           </select></td>
-        <td><input type="number" class="text3"></td>
-        <td><input type="number" class="text3"></td><td><input type="number" class="text3"></td>
-        <td><input type="number" class="text3"></td>
+        <td><input type="number" class="text3" name="competition_1_score"></td>
+        <td><input type="number" class="text3" name="competition_2_score"></td>
+        <td><input type="number" class="text3" name="competition_3_score"></td>
+        <td><input type="number" class="text3" name="competition_4_score"></td>
 
-        <td><input type="number" class="text3"></td>
-        <td><input type="number" class="text3"></td>
-        <td><input type="number" class="text3"></td>
-        <td><input type="number" class="text3"></td>
-        <td><input type="text" class="text"></td>
+        <td><input type="number" class="text3" name="competition_5_score"></td>
+        <td><input type="number" class="text3" name="competition_6_score"></td>
+        <td><input type="number" class="text3" name="competition_7_score"></td>
+        <td><input type="number" class="text3" name="competition_8_score"></td>
 
       </tr>
-      
-  
+
+
     </table>
     <input type="submit" value="競技を追加する">
   </form>
