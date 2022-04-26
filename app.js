@@ -10,7 +10,7 @@ app.get('/competition',(req,res)=>{
 });
 
 app.get('/new',(req,res)=>{
-    res.render('competition.ejs')
+    res.render('new.ejs')
 });
 
 app.listen(3000);
