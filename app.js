@@ -31,8 +31,8 @@ app.get("/new", (req, res) => {
 app.post("/newcompetition", (req, res) => {
   console.log(req.body);
   connection.query(
-    'INSERT INTO table4 (name,grade) VALUES (?,?);',
-    [req.body.competition_name, req.body.competition_grade],
+    'INSERT INTO table1 (name,grade,1_score,2_score,3_score,4_score,5_score,6_score,7_score,8_score) VALUES (?,?,?,?,?,?,?,?,?,?);',
+    [req.body.competition_name, req.body.competition_grade, req.body.competition_1_score, req.body.competition_2_score, req.body.competition_3_score, req.body.competition_4_score, req.body.competition_5_score, req.body.competition_6_score, req.body.competition_7_score, req.body.competition_8_score],
     (errow, result) => {
       console.log(errow);
       res.redirect('/competition');
