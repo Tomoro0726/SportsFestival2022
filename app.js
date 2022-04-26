@@ -21,7 +21,16 @@ app.get("/", (req, res) => {
 });
 
 app.get("/competition", (req, res) => {
-  res.render("competition.ejs");
+  connection.query(
+    'SELECT*FROM table1',
+
+    (errow, results) => {
+      console.log(results);
+      res.render('competition.ejs', {
+        items: results
+      });
+    }
+  );
 });
 
 app.get("/new", (req, res) => {
