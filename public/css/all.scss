@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Noto';
+  src: url('NotoSansJP-Regular.otf') format('opentype');
+}
+body{
+  font-family: Noto;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform:translateX(-50%);
+  margin: auto;
+  table {
+    border-collapse: collapse;
+    width: 90vw;
+    margin-bottom: 4vh;
+  }
+  th, td {
+    border: 1px solid #333;
+    font-size: 1.6vw;
+    text-align: center;
+    padding: 4px;
+    
+  }
+  .new{
+    font-size: 1.6vw;
+  }
+  .text{
+    outline: none;
+      border-bottom: #595353 solid 2px;
+    width: 15vw;
+  }  
+  .text2{
+    outline: none;
+      border-bottom: #595353 solid 2px;
+    width: 5vw;
+  }  
+  .text3{
+    outline: none;
+      border-bottom: #595353 solid 2px;
+    width: 3vw;
+  }  
+  .text4{
+    outline: none;
+      border-bottom: #595353 solid 2px;
+    width: 5vw;
+  }  
+}
