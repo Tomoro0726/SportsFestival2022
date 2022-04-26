@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Noto';
+  src: url('NotoSansJP-Regular.otf') format('opentype');
+}
+body{
+  font-family: Noto;
+  table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #333;
+  }
+}
