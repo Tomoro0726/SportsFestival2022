@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
   host: "127.0.0.1",
   user: "root",
   password: "4460726tomoro",
-  database: "sports",
+  database: "sports"
 });
 
 app.get("/", (req, res) => {
@@ -31,8 +31,8 @@ app.get("/new", (req, res) => {
 app.post("/newcompetition", (req, res) => {
   console.log(req.body);
   connection.query(
-    'insert into table1(name) values(?);',
-    [req.body.competition_name],
+    'INSERT INTO table4 (name,grade) VALUES (?,?);',
+    [req.body.competition_name, req.body.competition_grade],
     (errow, result) => {
       console.log(errow);
       res.redirect('/competition');
