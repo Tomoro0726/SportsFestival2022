@@ -17,7 +17,22 @@ const connection = mysql.createConnection({
 });
 
 app.get("/", (req, res) => {
+  console.log(req.body);
   res.render("index.ejs");
+});
+
+app.post("/login", (req, res) => {
+  console.log(req.body);
+  if (req.body.id == 'tosyo' && req.body.pass == 'tosyo') {
+    res.redirect("/all");
+  } else if (req.body.id == 'ict' && req.body.pass == 'ict') {
+
+  } else if (req.body.id == 'housou' && req.body.pass == 'housou') {
+
+  } else if (req.body.id == 'taiiku' && req.body.pass == 'taiiku') {
+
+  }
+  res.redirect("/");
 });
 
 app.get("/competition", (req, res) => {
