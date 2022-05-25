@@ -18,6 +18,22 @@ body {
         font-size: 1vw;
         padding: 2px;
         width: auto;
+
+        form {
+          .sakuzyo {
+
+            border: none;
+            /* 枠線を消す */
+            outline: none;
+            /* クリックしたときに表示される枠線を消す */
+            background: transparent;
+            /* 背景の灰色を消す */
+            text-decoration: underline;
+            color: #0000FF;
+            font-size: 1vw;
+            font-family: Noto;
+          }
+        }
       }
     }
 

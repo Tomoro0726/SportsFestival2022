@@ -46,7 +46,13 @@
         <%};%>
       </th>
       <th><a href="/registeredit/<%= item.id %>">編集</a></th>
-      <th><a href="/registerdelete/<%= item.id %>">削除</a></th>
+      <th>
+        <form action="/registerdelete/<%= item.id %>" method="post">
+
+          <input type="submit" value="削除" class="sakuzyo">
+        </form>
+      </th>
+
 
     </tr>
     <%  });%>

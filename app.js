@@ -49,6 +49,19 @@ app.get("/registeredit/:id", (req, res) => {
     }
   );
 });
+app.post("/registerdelete/:id", (req, res) => {
+  connection.query(
+    'DELETE FROM tokuten WHERE id=?',
+    [req.params.id],
+    (errow, results) => {
+
+      console.log(results);
+      console.log(req.params.id);
+      console.log(errow);
+      res.redirect("/register");
+    }
+  );
+});
 app.post("/registercreate", (req, res) => {
   if (req.body.hyouka == "昇順") {
     var hyouka = 1;
