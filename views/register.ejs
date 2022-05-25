@@ -22,24 +22,36 @@
       <th>8位得点</th>
       <th>評価方式</th>
       <th>編集</th>
+      <th>削除</th>
 
     </tr>
+
+    <% items.forEach((item)=> {%>
     <tr>
-      <th>スウェーデンリレー</th>
-      <th>H1</th>
-      <th>40</th>
-      <th>35</th>
-      <th>30</th>
-      <th>25</th>
-      <th>20</th>
-      <th>15</th>
-      <th>10</th>
-      <th>5</th>
-      <th>昇順</th>
-      <th>編集</th>
+      <th><%= item.name %></th>
+      <th><%= item.grade %></th>
+      <th><%= item.one %></th>
+      <th><%= item.two %></th>
+      <th><%= item.three %></th>
+      <th><%= item.four %></th>
+      <th><%= item.five %></th>
+      <th><%= item.six %></th>
+      <th><%= item.seven %></th>
+      <th><%= item.eight %></th>
+      <th>
+        <% if(item.hyouka==1){ %>
+        <%= "昇順" %>
+        <% }else if(item.hyouka==0){ %>
+        <%= "降順" %>
+        <%};%>
+      </th>
+      <th><a href="/registeredit/<%= item.id %>">編集</a></th>
+      <th><a href="/registerdelete/<%= item.id %>">削除</a></th>
+
     </tr>
+    <%  });%>
 
   </table>
-  <a href="/registercreate">競技を追加する</a>
+  <a href="/registercreate" class="add">競技を追加する</a>
 </body>
 </html>

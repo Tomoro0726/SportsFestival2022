@@ -17,19 +17,43 @@ const connection = mysql.createConnection({
 });
 
 app.get("/", (req, res) => {
-  res.render("index.ejs")
+  res.render("index.ejs");
 });
 app.get("/register", (req, res) => {
-  res.render("register.ejs")
+  connection.query(
+    'SELECT*FROM tokuten',
+    (errow, result) => {
+      console.log(result);
+      res.render("register.ejs", {
+        items: result
+      });
+    }
+  );
+
 });
 app.get("/registercreate", (req, res) => {
-  res.render("registercreate.ejs")
+  res.render("registercreate.ejs");
+});
+app.get("/registeredit/:id", (req, res) => {
+  connection.query(
+    'SELECT*FROM tokuten WHERE id=?',
+    [req.params.id],
+    (errow, results) => {
+
+      console.log(results);
+      console.log(req.params.id);
+      console.log(errow);
+      res.render('registeredit.ejs', {
+        items: results[0]
+      });
+    }
+  );
 });
 app.post("/registercreate", (req, res) => {
   if (req.body.hyouka == "昇順") {
-    var hyouka = true;
+    var hyouka = 1;
   } else if (req.body.hyouka == "降順") {
-    var hyouka = false;
+    var hyouka = 0;
   };
   console.log(hyouka);
   connection.query(
