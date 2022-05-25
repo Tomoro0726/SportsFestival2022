@@ -9,9 +9,15 @@ app.use(
   })
 );
 
-
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "4460726tomoro",
+  database: "sports"
+});
 
 app.get("/", (req, res) => {
-  console.log(req.body);
-  res.render("index.ejs");
-});
+  res.render("index.ejs")
+})
+
+app.listen(3000);
