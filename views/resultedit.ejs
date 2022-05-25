@@ -17,7 +17,7 @@
   <h1></h1>
 
   </h1>
-  <form action="/resultedit" method="post">
+  <form action="/resultedit/<%= items.id %>" method="post">
     <table>
       <tr>
         <th>1組-記録</th>
@@ -31,14 +31,14 @@
 
       </tr>
       <tr>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001" name="onekiroku"></th>
+        <th><input type="number" class="input" step="0.00001" name="twokiroku"></th>
+        <th><input type="number" class="input" step="0.00001" name="threekiroku"></th>
+        <th><input type="number" class="input" step="0.00001" name="fourkiroku"></th>
+        <th><input type="number" class="input" step="0.00001" name="fivekiroku"></th>
+        <th><input type="number" class="input" step="0.00001" name="sixkiroku"></th>
+        <th><input type="number" class="input" step="0.00001" name="sevenkiroku"></th>
+        <th><input type="number" class="input" step="0.00001" name="eightkiroku"></th>
 
       </tr>
     </table>
@@ -55,14 +55,14 @@
 
       </tr>
       <tr>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
-        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001" name="onec"></th>
+        <th><input type="number" class="input" step="0.00001" name="twoc"></th>
+        <th><input type="number" class="input" step="0.00001" name="threec"></th>
+        <th><input type="number" class="input" step="0.00001" name="fourc"></th>
+        <th><input type="number" class="input" step="0.00001" name="fivec"></th>
+        <th><input type="number" class="input" step="0.00001" name="sixc"></th>
+        <th><input type="number" class="input" step="0.00001" name="sevenc"></th>
+        <th><input type="number" class="input" step="0.00001" name="eightc"></th>
       </tr>
     </table>
     <table>
@@ -78,14 +78,14 @@
 
       </tr>
       <tr>
-        <th><input type="number" class="input" value="0"></th>
-        <th><input type="number" class="input" value="0"></th>
-        <th><input type="number" class="input" value="0"></th>
-        <th><input type="number" class="input" value="0"></th>
-        <th><input type="number" class="input" value="0"></th>
-        <th><input type="number" class="input" value="0"></th>
-        <th><input type="number" class="input" value="0"></th>
-        <th><input type="number" class="input" value="0"></th>
+        <th><input type="number" class="input" value="0" name="onep"></th>
+        <th><input type="number" class="input" value="0" name="twop"></th>
+        <th><input type="number" class="input" value="0" name="threep"></th>
+        <th><input type="number" class="input" value="0" name="fourp"></th>
+        <th><input type="number" class="input" value="0" name="fivep"></th>
+        <th><input type="number" class="input" value="0" name="sixp"></th>
+        <th><input type="number" class="input" value="0" name="sevenp"></th>
+        <th><input type="number" class="input" value="0" name="eightp"></th>
       </tr>
     </table>
     <table>
@@ -101,14 +101,14 @@
 
       </tr>
       <tr>
-        <th><input type="checkbox"></th>
-        <th><input type="checkbox"></th>
-        <th><input type="checkbox"></th>
-        <th><input type="checkbox"></th>
-        <th><input type="checkbox"></th>
-        <th><input type="checkbox"></th>
-        <th><input type="checkbox"></th>
-        <th><input type="checkbox"></th>
+        <th><input type="checkbox" name="oneh"></th>
+        <th><input type="checkbox" name="twoh"></th>
+        <th><input type="checkbox" name="threeh"></th>
+        <th><input type="checkbox" name="fourh"></th>
+        <th><input type="checkbox" name="fiveh"></th>
+        <th><input type="checkbox" name="sixh"></th>
+        <th><input type="checkbox" name="sevenh"></th>
+        <th><input type="checkbox" name="eighth"></th>
       </tr>
     </table>
     <table>
@@ -121,10 +121,10 @@
 
       </tr>
       <tr>
-        <th><textarea class="bikou"></textarea></th>
-        <th><textarea class="bikou"></textarea></th>
-        <th><textarea class="bikou"></textarea></th>
-        <th><textarea class="bikou"></textarea></th>
+        <th><textarea class="bikou" name="oneb"></textarea></th>
+        <th><textarea class="bikou" name="twob"></textarea></th>
+        <th><textarea class="bikou" name="threeb"></textarea></th>
+        <th><textarea class="bikou" name="fourb"></textarea></th>
 
       </tr>
       <tr>
@@ -134,10 +134,10 @@
         <th>8組-備考</th>
       </tr>
       <tr>
-        <th><textarea class="bikou"></textarea></th>
-        <th><textarea class="bikou"></textarea></th>
-        <th><textarea class="bikou"></textarea></th>
-        <th><textarea class="bikou"></textarea></th>
+        <th><textarea class="bikou" name="fiveb"></textarea></th>
+        <th><textarea class="bikou" name="sixb"></textarea></th>
+        <th><textarea class="bikou" name="sevenb"></textarea></th>
+        <th><textarea class="bikou" name="eightb"></textarea></th>
 
       </tr>
     </table>

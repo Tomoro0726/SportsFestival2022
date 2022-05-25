@@ -49,6 +49,21 @@ app.get("/registeredit/:id", (req, res) => {
     }
   );
 });
+app.post("/registeredit/:id", (req, res) => {
+  connection.query(
+    'SELECT*FROM tokuten WHERE id=?',
+    [req.params.id],
+    (errow, results) => {
+
+      console.log(results);
+      console.log(req.params.id);
+      console.log(errow);
+      res.render('registeredit.ejs', {
+        items: results[0]
+      });
+    }
+  );
+});
 app.post("/registerdelete/:id", (req, res) => {
   connection.query(
     'DELETE FROM tokuten WHERE id=?',
@@ -107,16 +122,13 @@ app.get("/resultedit/:id", (req, res) => {
 });
 app.post("/resultedit/:id", (req, res) => {
   connection.query(
-    'SELECT*FROM tokuten WHERE id=?',
-    [req.params.id],
-    (errow, results) => {
-
-      console.log(results);
-      console.log(req.params.id);
+    'INSERT INTO tokuten (onekiroku,twokiroku,threekiroku,fourkiroku,fivekiroku,sixkiroku,sevenkiroku,eightkiroku,onec,twoc,threec,fourc,fivec,sixc,sevenc,eightc,onep,twop,threep,fourp,fivep,sixp,sevenp,eightp,oneh,twoh,threeh,fourh,ficeh,sixh,sevenh,eighth,oneb,twob,threeb,fourb,fiveb,sixb,sevenb,eightb) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,);',
+    [req.body.onekiroku,],
+    (errow, result) => {
       console.log(errow);
-      res.render('resultedit.ejs', {
-        items: results[0]
-      });
+      console.log(req);
+
+      res.redirect('/result');
     }
   );
 });
