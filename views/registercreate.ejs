@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>得点登録</title>
+  <link rel="stylesheet" href="/css/registercreate.css">
+</head>
+<body>
+  <table>
+    <tr>
+      <th>競技名</th>
+      <th>学年</th>
+      <th>1位得点</th>
+      <th>2位得点</th>
+      <th>3位得点</th>
+      <th>4位得点</th>
+      <th>5位得点</th>
+      <th>6位得点</th>
+      <th>7位得点</th>
+      <th>8位得点</th>
+      <th>評価方式</th>
+
+
+    </tr>
+    <form action="/registercreate" method="post">
+      <tr>
+        <th><input type="text" class="input" name="name"></th>
+        <th><select class="input select" name="grade">
+            <option></option>
+
+            <option>H1</option>
+            <option>H2</option>
+            <option>H3</option>
+          </select></th>
+        <th><input type="number" class="input number" name="one"></th>
+        <th><input type="number" class="input number" name="two"></th>
+        <th><input type="number" class="input number" name="three"></th>
+        <th><input type="number" class="input number" name="four"></th>
+        <th><input type="number" class="input number" name="five"></th>
+        <th><input type="number" class="input number" name="six"></th>
+        <th><input type="number" class="input number" name="seven"></th>
+        <th><input type="number" class="input number" name="eight"></th>
+
+        <th><select class="input select" name="hyouka">
+
+            <option>昇順</option>
+            <option>降順</option>
+
+          </select></th>
+
+
+      </tr>
+
+
+
+  </table>
+  <input type="submit" class="submit">
+  </form>
+</body>
+</html>

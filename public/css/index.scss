@@ -1,3 +1,29 @@
+@font-face {
+  font-family: 'Noto';
+  src: url('NotoSansJP-Regular.otf') format('opentype');
+}
+
 body {
-  background-color: red;
+  font-family: Noto;
+
+  h1 {
+    text-align: center;
+    font-size: 3vw;
+  }
+
+  div {
+    margin-left: 6vw;
+
+    h2 {
+      font-size: 2vw;
+    }
+
+    h3 {
+      font-size: 1.3vw;
+
+      a {
+        color: #0000FF;
+      }
+    }
+  }
 }
