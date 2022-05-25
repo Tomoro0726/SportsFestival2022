@@ -79,5 +79,47 @@ app.post("/registercreate", (req, res) => {
     }
   );
 });
+app.get("/result", (req, res) => {
+  connection.query(
+    'SELECT*FROM tokuten',
+    (errow, result) => {
+      console.log(result);
+      res.render("result.ejs", {
+        items: result
+      });
+    }
+  );
+});
+app.get("/resultedit/:id", (req, res) => {
+  connection.query(
+    'SELECT*FROM tokuten WHERE id=?',
+    [req.params.id],
+    (errow, results) => {
+
+      console.log(results);
+      console.log(req.params.id);
+      console.log(errow);
+      res.render('resultedit.ejs', {
+        items: results[0]
+      });
+    }
+  );
+});
+app.post("/resultedit/:id", (req, res) => {
+  connection.query(
+    'SELECT*FROM tokuten WHERE id=?',
+    [req.params.id],
+    (errow, results) => {
+
+      console.log(results);
+      console.log(req.params.id);
+      console.log(errow);
+      res.render('resultedit.ejs', {
+        items: results[0]
+      });
+    }
+  );
+});
+
 
 app.listen(3000);

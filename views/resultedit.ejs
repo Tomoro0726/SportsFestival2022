@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>得点登録</title>
+  <link rel="stylesheet" href="/css/resultedit.css">
+</head>
+<body>
+  <% if(items.hyouka==1){ %>
+  <%var hyouka= "昇順" %>
+  <% }else if(items.hyouka==0){ %>
+  <%var hyouka= "降順" %>
+  <%};%>
+  <h1>競技名:<%= items.name %>　　参加学年:<%= items.grade %>　　評価基準:<%= hyouka %></h1>
+  <h1></h1>
+
+  </h1>
+  <form action="/resultedit" method="post">
+    <table>
+      <tr>
+        <th>1組-記録</th>
+        <th>2組-記録</th>
+        <th>3組-記録</th>
+        <th>4組-記録</th>
+        <th>5組-記録</th>
+        <th>6組-記録</th>
+        <th>7組-記録</th>
+        <th>8組-記録</th>
+
+      </tr>
+      <tr>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>1組-タイム変更</th>
+        <th>2組-タイム変更</th>
+        <th>3組-タイム変更</th>
+        <th>4組-タイム変更</th>
+        <th>5組-タイム変更</th>
+        <th>6組-タイム変更</th>
+        <th>7組-タイム変更</th>
+        <th>8組-タイム変更</th>
+
+      </tr>
+      <tr>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+        <th><input type="number" class="input" step="0.00001"></th>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>1組-減点</th>
+        <th>2組-減点</th>
+        <th>3組-減点</th>
+        <th>4組-減点</th>
+        <th>5組-減点</th>
+        <th>6組-減点</th>
+        <th>7組-減点</th>
+        <th>8組-減点</th>
+
+      </tr>
+      <tr>
+        <th><input type="number" class="input" value="0"></th>
+        <th><input type="number" class="input" value="0"></th>
+        <th><input type="number" class="input" value="0"></th>
+        <th><input type="number" class="input" value="0"></th>
+        <th><input type="number" class="input" value="0"></th>
+        <th><input type="number" class="input" value="0"></th>
+        <th><input type="number" class="input" value="0"></th>
+        <th><input type="number" class="input" value="0"></th>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>1組-半減</th>
+        <th>2組-半減</th>
+        <th>3組-半減</th>
+        <th>4組-半減</th>
+        <th>5組-半減</th>
+        <th>6組-半減</th>
+        <th>7組-半減</th>
+        <th>8組-半減</th>
+
+      </tr>
+      <tr>
+        <th><input type="checkbox"></th>
+        <th><input type="checkbox"></th>
+        <th><input type="checkbox"></th>
+        <th><input type="checkbox"></th>
+        <th><input type="checkbox"></th>
+        <th><input type="checkbox"></th>
+        <th><input type="checkbox"></th>
+        <th><input type="checkbox"></th>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>1組-備考</th>
+        <th>2組-備考</th>
+        <th>3組-備考</th>
+        <th>4組-備考</th>
+
+
+      </tr>
+      <tr>
+        <th><textarea class="bikou"></textarea></th>
+        <th><textarea class="bikou"></textarea></th>
+        <th><textarea class="bikou"></textarea></th>
+        <th><textarea class="bikou"></textarea></th>
+
+      </tr>
+      <tr>
+        <th>5組-備考</th>
+        <th>6組-備考</th>
+        <th>7組-備考</th>
+        <th>8組-備考</th>
+      </tr>
+      <tr>
+        <th><textarea class="bikou"></textarea></th>
+        <th><textarea class="bikou"></textarea></th>
+        <th><textarea class="bikou"></textarea></th>
+        <th><textarea class="bikou"></textarea></th>
+
+      </tr>
+    </table>
+    <input type="submit" value="記録する" class="submit">
+  </form>
+</body>
+</html>

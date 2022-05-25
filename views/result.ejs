@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>得点登録</title>
+  <link rel="stylesheet" href="/css/result.css">
+</head>
+<body>
+  <table>
+    <tr>
+      <th colspan="2">
+        基本情報
+      </th>
+      <th colspan="8">
+        得点
+      </th>
+      <th colspan="8">
+        順位
+      </th>
+      <th colspan="1">
+        記録ボタン
+      </th>
+    </tr>
+    <tr>
+      <th>競技名</th>
+      <th>学年</th>
+      <th>1組</th>
+      <th>2組</th>
+      <th>3組</th>
+      <th>4組</th>
+      <th>5組</th>
+      <th>6組</th>
+      <th>7組</th>
+      <th>8組</th>
+      <th>1組</th>
+      <th>2組</th>
+      <th>3組</th>
+      <th>4組</th>
+      <th>5組</th>
+      <th>6組</th>
+      <th>7組</th>
+      <th>8組</th>
+      <th>記録</th>
+    </tr>
+    <% items.forEach((item)=> {%>
+    <tr>
+      <th><%= item.name %></th>
+      <th><%= item.grade %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th><a href="/resultedit/<%= item.id %>">編集</a></th>
+
+
+
+
+
+    </tr>
+    <%  });%>
+  </table>
+</body>
+</html>
