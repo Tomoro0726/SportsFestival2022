@@ -24,7 +24,7 @@
 
 
     </tr>
-    <form action="/registeredit" method="post">
+    <form action="/registeredit/<%= items.id %>" method="post">
       <tr>
         <th><input type="text" class="input" name="name" value="<%= items.name %>"></th>
         <th><select class="input select" name="grade">
@@ -44,16 +44,16 @@
         <th><input type="number" class="input number" name="six" value="<%= items.six %>"></th>
         <th><input type="number" class="input number" name="seven" value="<%= items.seven %>"></th>
         <th><input type="number" class="input number" name="eight" value="<%= items.eight %>"></th>
-        <th><select class="input select" value="<%= items.hyouka %>">
+        <th><select class="input select" value="<%= items.hyouka %>" name="hyouka">
             <% if(items.hyouka==1){ %>
-            <% var hyouka="昇順" %>
+            <% var syouzyunn="selected" %>
             <%}else if(items.hyouka==0){%>
-            <% var hyouka="降順" %>
-            <% }; %>
-            <option hidden><%= hyouka %></option>
+            <% var kouzyunn="selected" %>
 
-            <option>昇順</option>
-            <option>降順</option>
+            <% }; %>
+
+            <option <%= syouzyunn %>>昇順</option>
+            <option <%= kouzyunn %>>降順</option>
 
           </select></th>
 
