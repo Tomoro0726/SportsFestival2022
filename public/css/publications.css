@@ -15,6 +15,17 @@ body table {
   margin-bottom: 3vh;
 }
 
+body table tr .bikou {
+  height: 15vh;
+  outline: none;
+  font-family: Noto;
+  resize: none;
+  width: 25%;
+  font-size: 0.7vw;
+  text-align: left;
+  vertical-align: top;
+}
+
 body table tr th {
   border: 2px solid #000000;
   font-size: 1vw;

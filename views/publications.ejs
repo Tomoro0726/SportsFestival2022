@@ -31,39 +31,148 @@
 
       </tr>
       <tr>
-        <th><%= items.onekiroku %></th>
         <th>
-          <%= items.twokiroku %></th>
-        <th><%= items.threekiroku %></th>
-        <th><%= items.fourkiroku %></th>
-        <th><%= items.fivekiroku %></th>
-        <th><%= items.sixkiroku %></th>
-        <th><%= items.sevenkiroku %></th>
-        <th><%= items.eightkiroku %></th>
+          <% if(items.onekiroku==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.onekiroku %>
 
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.twokiroku==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.twokiroku %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.threekiroku==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.threekiroku %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.fourkiroku==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.fourkiroku %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.fivekiroku==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.fivekiroku %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.sixkiroku==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.sixkiroku %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.sevenkiroku==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.sevenkiroku %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.eightkiroku==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.eightkiroku%>
+
+          <% }; %>
+        </th>
       </tr>
     </table>
     <table>
+      <th>1組-減点考慮済み記録</th>
+      <th>2組-減点考慮済み記録</th>
+      <th>3組-減点考慮済み記録</th>
+      <th>4組-減点考慮済み記録</th>
+      <th>5組-減点考慮済み記録</th>
+      <th>6組-減点考慮済み記録</th>
+      <th>7組-減点考慮済み記録</th>
+      <th>8組-減点考慮済み記録</th>
       <tr>
-        <th>1組-減点考慮済み記録</th>
-        <th>2組-減点考慮済み記録</th>
-        <th>3組-減点考慮済み記録</th>
-        <th>4組-減点考慮済み記録</th>
-        <th>5組-減点考慮済み記録</th>
-        <th>6組-減点考慮済み記録</th>
-        <th>7組-減点考慮済み記録</th>
-        <th>8組-減点考慮済み記録</th>
+        <th>
+          <% if(items.onec==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.onec %>
 
-      </tr>
-      <tr>
-        <th><%= items.onec %></th>
-        <th><%= items.twoc %></th>
-        <th><%= items.threec %></th>
-        <th><%= items.fourc %></th>
-        <th><%= items.fivec %></th>
-        <th><%= items.sixc %></th>
-        <th><%= items.sevenc %></th>
-        <th><%= items.eightc %></th>
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.twoc==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.twoc %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.threec==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.threec %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.fourc==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.fourc %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.fivec==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.fivec %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.sixc==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.sixc %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.sevenc==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.sevenc %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.eightc==null){ %>
+          <%= "未記入" %>
+          <%}else{%>
+          <%= items.eighc %>
+
+          <% }; %>
+        </th>
+
+
       </tr>
     </table>
     <table>
@@ -79,14 +188,70 @@
 
       </tr>
       <tr>
-        <th><input type="number" class="input" name="onep" value="<%= items.onep %>"></th>
-        <th><input type=" number" class="input" name="twop" value="<%= items.twop %>"></th>
-        <th><input type="number" class="input" name="threep" value="<%= items.threep %>"></th>
-        <th><input type="number" class="input" name="fourp" value="<%= items.fourp %>"></th>
-        <th><input type="number" class="input" name="fivep" value="<%= items.fivep %>"></th>
-        <th><input type="number" class="input" name="sixp" value="<%= items.sixp %>"></th>
-        <th><input type="number" class="input" name="sevenp" value="<%= items.sevenp %>"></th>
-        <th><input type="number" class="input" name="eightp" value="<%= items.eightp %>"></th>
+        <th>
+          <% if(items.onep==null){ %>
+          <%= 0 %>
+          <%}else{%>
+          <%= items.onep %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.twop==null){ %>
+          <%= 0 %>
+          <%}else{%>
+          <%= items.twop %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.threep==null){ %>
+          <%= 0 %>
+          <%}else{%>
+          <%= items.threep %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.fourp==null){ %>
+          <%= 0 %>
+          <%}else{%>
+          <%= items.fourp %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.fivep==null){ %>
+          <%= 0 %>
+          <%}else{%>
+          <%= items.fivep %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.sixp==null){ %>
+          <%= 0 %>
+          <%}else{%>
+          <%= items.sixp %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.sevenp==null){ %>
+          <%= 0 %>
+          <%}else{%>
+          <%= items.sevenp %>
+
+          <% }; %>
+        </th>
+        <th>
+          <% if(items.eightp==null){ %>
+          <%= 0 %>
+          <%}else{%>
+          <%= items.eightp %>
+
+          <% }; %>
+        </th>
       </tr>
     </table>
     <table>
@@ -102,117 +267,63 @@
 
       </tr>
       <tr>
-        <th><select class="input select" name="oneh">
-            <% if(items.oneh=="半減"){ %>
-            <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
-            <% var ngen="selected" %>
+        <th><% if(items.oneh=="半減"){ %>
+          <%= "半減" %>
+          <%}else{%>
+          <%= "なし" %>
 
-            <% }; %>
-            <option<%= gen %>>
-              </option>
-              <option<%= ngen %>>半減</option>
-                <option></option>
-          </select></th>
-        <th><select class="input select" name="twoh">
+          <% }; %></th>
 
-            <% if(items.twoh=="半減"){ %>
-            <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
-            <% var ngen="selected" %>
+        <th><% if(items.twoh=="半減"){ %>
+          <%= "半減" %>
+          <%}else{%>
+          <%= "なし" %>
 
-            <% }; %>
-            <option<%= gen %>>
-              </option>
-              <option<%= ngen %>>半減</option>
-                <option></option>
+          <% }; %></th>
 
-          </select></th>
-        <th><select class="input select" name="threeh">
+        <th><% if(items.threeh=="半減"){ %>
+          <%= "半減" %>
+          <%}else{%>
+          <%= "なし" %>
 
-            <% if(items.threeh=="半減"){ %>
-            <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
-            <% var ngen="selected" %>
+          <% }; %></th>
 
-            <% }; %>
-            <option<%= gen %>>
-              </option>
-              <option<%= ngen %>>半減</option>
-                <option></option>
+        <th><% if(items.fourh=="半減"){ %>
+          <%= "半減" %>
+          <%}else{%>
+          <%= "なし" %>
 
-          </select></th>
-        <th><select class="input select" name="fourh">
+          <% }; %></th>
 
-            <% if(items.fourh=="半減"){ %>
-            <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
-            <% var ngen="selected" %>
+        <th><% if(items.fiveh=="半減"){ %>
+          <%= "半減" %>
+          <%}else{%>
+          <%= "なし" %>
 
-            <% }; %>
-            <option<%= gen %>>
-              </option>
-              <option<%= ngen %>>半減</option>
-                <option></option>
+          <% }; %></th>
 
-          </select></th>
-        <th><select class="input select" name="fiveh">
+        <th><% if(items.sixh=="半減"){ %>
+          <%= "半減" %>
+          <%}else{%>
+          <%= "なし" %>
 
-            <% if(items.fiveh=="半減"){ %>
-            <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
-            <% var ngen="selected" %>
+          <% }; %></th>
 
-            <% }; %>
-            <option<%= gen %>>
-              </option>
-              <option<%= ngen %>>半減</option>
-                <option></option>
+        <th><% if(items.sevenh=="半減"){ %>
+          <%= "半減" %>
+          <%}else{%>
+          <%= "なし" %>
 
-          </select></th>
-        <th><select class="input select" name="sixh">
+          <% }; %></th>
 
-            <% if(items.sixh=="半減"){ %>
-            <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
-            <% var ngen="selected" %>
+        <th><% if(items.eighth=="半減"){ %>
+          <%= "半減" %>
+          <%}else{%>
+          <%= "なし" %>
 
-            <% }; %>
-            <option<%= gen %>>
-              </option>
-              <option<%= ngen %>>半減</option>
-                <option></option>
-
-          </select></th>
-        <th><select class="input select" name="sevenh">
-
-            <% if(items.sevenh=="半減"){ %>
-            <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
-            <% var ngen="selected" %>
-
-            <% }; %>
-            <option<%= gen %>>
-              </option>
-              <option<%= ngen %>>半減</option>
-                <option></option>
-
-          </select></th>
-        <th><select class="input select" name="eighth">
-
-            <% if(items.eighth=="半減"){ %>
-            <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
-            <% var ngen="selected" %>
-
-            <% }; %>
-            <option<%= gen %>>
-              </option>
-              <option<%= ngen %>>半減</option>
-                <option></option>
-
-          </select></th>
+          <% }; %></th>
       </tr>
+
     </table>
     <table>
       <tr>
@@ -224,10 +335,15 @@
 
       </tr>
       <tr>
-        <th><textarea class="bikou" name="oneb"></textarea></th>
-        <th><textarea class="bikou" name="twob"></textarea></th>
-        <th><textarea class="bikou" name="threeb"></textarea></th>
-        <th><textarea class="bikou" name="fourb"></textarea></th>
+        <th class="bikou"><%= items.oneb %></th>
+        <th class="bikou"><%= items.twob %></th>
+        <th class="bikou"><%= items.threeb %></th>
+        <th class="bikou"><%= items.fourb %></th>
+
+
+
+
+
 
       </tr>
       <tr>
@@ -237,14 +353,14 @@
         <th>8組-備考</th>
       </tr>
       <tr>
-        <th><textarea class="bikou" name="fiveb"></textarea></th>
-        <th><textarea class="bikou" name="sixb"></textarea></th>
-        <th><textarea class="bikou" name="sevenb"></textarea></th>
-        <th><textarea class="bikou" name="eightb"></textarea></th>
+        <th class="bikou"><%= items.fiveb %></th>
+        <th class="bikou"><%= items.sixb %></th>
+        <th class="bikou"><%= items.sevenb %></th>
+        <th class="bikou"><%= items.eightb %></th>
 
       </tr>
     </table>
-    <input type="submit" value="記録する" class="submit">
+    <a href="/publication" class="submit">一覧に戻る</a>
   </form>
 </body>
 </html>
