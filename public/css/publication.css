@@ -63,9 +63,11 @@ body .add {
 }
 
 body .menu {
-  position: absolute;
   left: 2vw;
-  bottom: 2vw;
   color: #0000FF;
   font-size: 1.3vw;
+}
+
+body .with {
+  width: 23%;
 }

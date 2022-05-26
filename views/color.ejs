@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>得点登録</title>
+  <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+  <table>
+    <tr>
+      <th>競技名</th>
+      <th>1位得点</th>
+      <th>2位得点</th>
+      <th>3位得点</th>
+      <th>4位得点</th>
+      <th>5位得点</th>
+      <th>6位得点</th>
+      <th>7位得点</th>
+      <th>8位得点</th>
+      <th>評価方式</th>
+      <th>編集</th>
+      <th>削除</th>
+
+    </tr>
+    <% items.forEach((item)=> {%>
+    <tr>
+      <th><%= item.name %></th>
+      <th><%= item.one %></th>
+      <th><%= item.two %></th>
+      <th><%= item.three %></th>
+      <th><%= item.four %></th>
+      <th><%= item.five %></th>
+      <th><%= item.six %></th>
+      <th><%= item.seven %></th>
+      <th><%= item.eight %></th>
+      <th>
+        <% if(item.hyouka==1){ %>
+        <%= "昇順" %>
+        <% }else if(item.hyouka==0){ %>
+        <%= "降順" %>
+        <%};%>
+      </th>
+      <th><a href="/coloredit/<%= item.id %>">編集</a></th>
+      <th>
+        <form action="/colordelete/<%= item.id %>" method="post">
+
+          <input type="submit" value="削除" class="sakuzyo">
+        </form>
+      </th>
+
+
+    </tr>
+    <%  });%>
+
+
+  </table>
+  <a href="/colorcreate" class="add">競技を追加する</a>
+  <a href="/" class="menu">メニューに戻る</a>
+
+</body>
+</html>

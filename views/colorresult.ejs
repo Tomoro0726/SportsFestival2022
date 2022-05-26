@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>得点登録</title>
+
+  <link rel="stylesheet" href="/css/result.css">
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th colspan="1">
+        基本情報
+      </th>
+      <th colspan="8">
+        得点
+      </th>
+      <th colspan="8">
+        順位
+      </th>
+      <th colspan="1">
+        記録ボタン
+      </th>
+    </tr>
+    <tr>
+      <th>競技名</th>
+      <th>1組</th>
+      <th>2組</th>
+      <th>3組</th>
+      <th>4組</th>
+      <th>5組</th>
+      <th>6組</th>
+      <th>7組</th>
+      <th>8組</th>
+      <th>1組</th>
+      <th>2組</th>
+      <th>3組</th>
+      <th>4組</th>
+      <th>5組</th>
+      <th>6組</th>
+      <th>7組</th>
+      <th>8組</th>
+      <th>記録</th>
+    </tr>
+    <% items.forEach((item)=> {%>
+    <!-- 得点一覧 -->
+    <% var tokuten=[] %>
+    <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven,item.eight) %>
+    <!-- クラスタイム（記録）-->
+    <% var time1=[] %>
+    <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku,item.eightkiroku) %>
+    <!-- クラスタイム（判定）-->
+    <% var time2=[] %>
+    <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc,item.eightc) %>
+    <!--減点-->
+    <% var genten=[] %>
+    <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp,item.eightp) %>
+    <!--半減-->
+    <% var hanngen=[] %>
+    <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
+    <!--タイム統合処理-->
+    <% for (let i = 0; i < tokuten.length; i++) { %>
+    <% if (time2[i] !== null) { %>
+    <% time1[i]=time2[i] %>
+    <% } %>
+    <% } %>
+    <!--順位処理-->
+    <% if (item.hyouka ==0 ) { %>
+    <% var sorted=time1.slice().sort(function(a, b){return b - a});%>
+    <% var ranks = time1.slice().map(function(x){return sorted.indexOf(x) + 1});%>
+    <% }else if(item.hyouka ==1){ %>
+    <% var sorted=time1.slice().sort(function(a, b){return a - b});%>
+    <% var ranks = time1.slice().map(function(x){return sorted.indexOf(x) + 1});%>
+    <% } %>
+    <!--得点変換処理-->
+    <% var hennkann=[] %>
+    <% for (let i = 0; i < 8; i++) { %>
+    <% hennkann.push(tokuten[ranks[i]-1]) %>
+    <% } %>
+    <!--得点減点処理-->
+    <% for (let i = 0; i < 8; i++) { %>
+    <% hennkann[i]=hennkann[i]-genten[i] %>
+    <% } %>
+    <!--得点半減処理-->
+    <% for (let i = 0; i < 8; i++) { %>
+    <% if (hanngen[i]=="半減") { %>
+    <% hennkann[i]=hennkann[i]/2 %>
+
+    <% } %>
+    <% } %>
+    <!--総合順位-->
+    <% var sorted=hennkann.slice().sort(function(a, b){return b - a});%>
+    <% var all = hennkann.slice().map(function(x){return sorted.indexOf(x) + 1});%>
+    <!--未記入対策-->
+    <% for (let i = 0; i < 8; i++) { %>
+    <% if (time1[i]==null) { %>
+    <% hennkann[i]="" %>
+    <% all[i]="" %>
+
+    <% } %>
+    <% } %>
+
+    <tr>
+
+      <th><%= item.name %></th>
+      <th><%= hennkann[0] %></th>
+      <th><%= hennkann[1] %></th>
+      <th><%= hennkann[2] %></th>
+      <th><%= hennkann[3] %></th>
+      <th><%= hennkann[4] %></th>
+      <th><%= hennkann[5] %></th>
+      <th><%= hennkann[6] %></th>
+      <th><%= hennkann[7] %></th>
+
+
+
+      <th><%=all[0] %></th>
+      <th><%=all[1] %></th>
+      <th><%=all[2] %></th>
+      <th><%=all[3] %></th>
+      <th><%=all[4] %></th>
+      <th><%=all[5] %></th>
+      <th><%=all[6] %></th>
+      <th><%=all[7] %></th>
+
+      <th><a href="/colorresultedit/<%= item.id %>">記録</a></th>
+
+
+
+
+
+    </tr>
+
+    <%  });%>
+  </table>
+  <a href="/" class="menu">メニューに戻る</a>
+
+</body>
+
+</html>
