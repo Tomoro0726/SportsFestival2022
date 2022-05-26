@@ -3,7 +3,31 @@ const express = require("express");
 const app = express();
 app.use(express.static("public"));
 const mysql = require("mysql");
+var os = require('os');
+console.log(getLocalAddress());
 
+function getLocalAddress() {
+    var ifacesObj = {}
+    ifacesObj.ipv4 = [];
+    ifacesObj.ipv6 = [];
+    var interfaces = os.networkInterfaces();
+
+    for (var dev in interfaces) {
+        interfaces[dev].forEach(function(details){
+            if (!details.internal){
+                switch(details.family){
+                    case "IPv4":
+                        ifacesObj.ipv4.push({name:dev, address:details.address});
+                    break;
+                    case "IPv6":
+                        ifacesObj.ipv6.push({name:dev, address:details.address})
+                    break;
+                }
+            }
+        });
+    }
+    return ifacesObj;
+};
 app.use(
   express.urlencoded({
     extended: false,
@@ -95,6 +119,7 @@ app.post("/registercreate", (req, res) => {
     }
   );
 });
+
 app.get("/result", (req, res) => {
   connection.query(
     'SELECT*FROM tokuten',
@@ -173,6 +198,10 @@ app.get("/publication/:id", (req, res) => {
       });
     }
   );
+});
+
+app.get("/ip",(req,res)=>{
+  res.render("ip.ejs",{items: getLocalAddress() })
 });
 
 app.listen(3000);

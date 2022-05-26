@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/rese.css">
+  <link rel="stylesheet" href="/css/ip.css">
+  
+
+  <title>Document</title>
+</head>
+<body>
+  <div class="ip">
+    <div class="text">
+      <h3><%= items.ipv4[0].name %></h3>
+      <h3><%= items.ipv4[0].address %></h3>
+      <h3><%= items.ipv4[1].name %></h3>
+      <h3><%= items.ipv4[1].address %></h3>
+    </div>
+  </div>
+  <div class="qr">
+<div data-url="https://kumatech-lab.com"></div>
+
+    <script>
+      const qrDiv = document.querySelectorAll( '[data-url]' );
+new QRCode( qrDiv, {
+    text: qrDiv.getAttribute( 'google.com' ),
+    width: 350,
+    height: 350,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+} );
+    </script>
+  </div>
+  
+
+</body>
+</html>

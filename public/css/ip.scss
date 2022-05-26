@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'Noto';
+  src: url('NotoSansJP-Regular.otf') format('opentype');
+}
+
+body {
+  font-family: Noto;
+  .ip{
+    left: 0;
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    .text{
+
+      h3{
+      
+        text-align: center;
+        font-size: 3vw;
+      }
+    }
+  }
+  .qr{
+    right: 0;
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    .text{
+
+      h3{
+      
+        text-align: center;
+        font-size: 3vw;
+      }
+    }
+  }
+}

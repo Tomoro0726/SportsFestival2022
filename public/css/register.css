@@ -41,3 +41,11 @@ body .add {
   color: #0000FF;
   font-size: 1.3vw;
 }
+
+body .menu {
+  position: absolute;
+  left: 2vw;
+  bottom: 2vw;
+  color: #0000FF;
+  font-size: 1.3vw;
+}

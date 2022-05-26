@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'Noto';
+  src: url("NotoSansJP-Regular.otf") format("opentype");
+}
+
+body {
+  font-family: Noto;
+}
+
+body .ip {
+  left: 0;
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .ip .text h3 {
+  text-align: center;
+  font-size: 3vw;
+}
+
+body .qr {
+  right: 0;
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .qr .text h3 {
+  text-align: center;
+  font-size: 3vw;
+}
