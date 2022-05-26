@@ -144,5 +144,35 @@ app.post("/resultedit/:id", (req, res) => {
   );
 });
 
+app.get("/publication", (req, res) => {
+  connection.query(
+    'SELECT*FROM tokuten WHERE grade="H1"',
+    (errow, result) => {
+      connection.query(
+        'SELECT*FROM tokuten WHERE grade="H2"',
+        (errow, result2) => {
+          connection.query(
+            'SELECT*FROM tokuten WHERE grade="H3"',
+            (errow, result3) => {
+              res.render("publication.ejs", {
+                items: result, items2: result2, items3: result3
+              });
+            }
+          );
+        }
+      );
+    }
+  );
+});
+app.get("/publication/:id", (req, res) => {
+  connection.query(
+    'SELECT*FROM tokuten WHERE id=?', [req.params.id],
+    (errow, result) => {
+      res.render("publications.ejs", {
+        items: result[0]
+      });
+    }
+  );
+});
 
 app.listen(3000);

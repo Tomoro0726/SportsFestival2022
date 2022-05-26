@@ -5,13 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>得点登録</title>
-  <link rel="stylesheet" href="/css/result.css">
+  <link rel="stylesheet" href="/css/publication.css">
 </head>
 <body>
   <table>
     <tr>
       <th colspan="2">
-        基本情報
+        H1競技結果
       </th>
       <th colspan="8">
         得点
@@ -20,11 +20,11 @@
         順位
       </th>
       <th colspan="1">
-        記録ボタン
+        詳細閲覧ボタン
       </th>
     </tr>
     <tr>
-      <th>競技名</th>
+      <th> 詳細閲覧</th>
       <th>学年</th>
       <th>1組</th>
       <th>2組</th>
@@ -102,6 +102,7 @@
     <% } %>
     <% } %>
 
+
     <tr>
 
       <th><%= item.name %></th>
@@ -126,7 +127,7 @@
       <th><%=all[6] %></th>
       <th><%=all[7] %></th>
 
-      <th><a href="/resultedit/<%= item.id %>">記録</a></th>
+      <th><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
 
 
 

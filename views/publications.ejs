@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>得点登録</title>
-  <link rel="stylesheet" href="/css/resultedit.css">
+  <link rel="stylesheet" href="/css/publications.css">
 </head>
 <body>
   <% if(items.hyouka==1){ %>
@@ -31,14 +31,15 @@
 
       </tr>
       <tr>
-        <th><input type="number" class="input" step="0.00001" name="onekiroku" value="<%= items.onekiroku %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="twokiroku" value="<%= items.twokiroku %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="threekiroku" value="<%= items.threekiroku %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="fourkiroku" value="<%= items.fourkiroku %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="fivekiroku" value="<%= items.fivekiroku %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="sixkiroku" value="<%= items.sixkiroku %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="sevenkiroku" value="<%= items.sevenkiroku %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="eightkiroku" value="<%= items.eightkiroku %>"></th>
+        <th><%= items.onekiroku %></th>
+        <th>
+          <%= items.twokiroku %></th>
+        <th><%= items.threekiroku %></th>
+        <th><%= items.fourkiroku %></th>
+        <th><%= items.fivekiroku %></th>
+        <th><%= items.sixkiroku %></th>
+        <th><%= items.sevenkiroku %></th>
+        <th><%= items.eightkiroku %></th>
 
       </tr>
     </table>
@@ -55,14 +56,14 @@
 
       </tr>
       <tr>
-        <th><input type="number" class="input" step="0.00001" name="onec" value="<%= items.onec %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="twoc" value="<%= items.twoc %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="threec" value="<%= items.threec %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="fourc" value="<%= items.fourc %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="fivec" value="<%= items.fivec %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="sixc" value="<%= items.sixc %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="sevenc" value="<%= items.sevenc %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="eightc" value="<%= items.eightc %>"></th>
+        <th><%= items.onec %></th>
+        <th><%= items.twoc %></th>
+        <th><%= items.threec %></th>
+        <th><%= items.fourc %></th>
+        <th><%= items.fivec %></th>
+        <th><%= items.sixc %></th>
+        <th><%= items.sevenc %></th>
+        <th><%= items.eightc %></th>
       </tr>
     </table>
     <table>

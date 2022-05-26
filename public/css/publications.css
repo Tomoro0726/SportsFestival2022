@@ -1,0 +1,71 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Noto';
+  src: url("NotoSansJP-Regular.otf") format("opentype");
+}
+
+body {
+  font-family: Noto;
+}
+
+body table {
+  border-collapse: collapse;
+  margin-top: 1vw;
+  width: 98vw;
+  margin-bottom: 3vh;
+}
+
+body table tr th {
+  border: 2px solid #000000;
+  font-size: 1vw;
+  padding: 1px;
+  width: auto;
+}
+
+body table tr th .input {
+  border: none;
+  outline: none;
+  font-size: 1vw;
+  border-bottom: #000000 solid 2px;
+  font-family: Noto;
+  text-align: center;
+}
+
+body table tr th .bikou {
+  height: 15vh;
+  outline: none;
+  border: none;
+  font-family: Noto;
+  resize: none;
+  width: 90%;
+}
+
+body table tr th .number {
+  width: 5vw;
+}
+
+body table tr th .select {
+  width: 5vw;
+}
+
+body .submit {
+  position: absolute;
+  right: 2vw;
+  color: #0000FF;
+  font-size: 1.3vw;
+  font-family: Noto;
+  border: none;
+  /* 枠線を消す */
+  outline: none;
+  /* クリックしたときに表示される枠線を消す */
+  background: transparent;
+  /* 背景の灰色を消す */
+  text-decoration: underline;
+}
+
+body .add {
+  position: absolute;
+  right: 2vw;
+  color: #0000FF;
+  font-size: 1.3vw;
+}
