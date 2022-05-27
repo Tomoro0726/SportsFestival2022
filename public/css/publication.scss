@@ -13,12 +13,19 @@ body {
 
 
     tr {
+      .syousai{
+        width: 10%;
+      }
+      .with {
+        width: 23%;
+      }
+      
       th {
         border: 2px solid #000000;
         font-size: 1vw;
         padding: 1px;
         width: auto;
-
+        
         .input {
           border: none;
           outline: none;
@@ -73,7 +80,10 @@ body {
     font-size: 1.3vw;
   }
 
-  .with {
-    width: 23%;
+
+  table{
+    .color{
+      width: 3.5%;
+    }
   }
 }

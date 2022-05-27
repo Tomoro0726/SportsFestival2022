@@ -20,15 +20,37 @@
   </h1>
   <form action="/resultedit/<%= items.id %>" method="post">
     <table>
+      <% if (items.grade =="H1" ){ %>
+        <%  var color1="red" %>
+        <%  var color2="blue" %>
+        <%  var color3="black" %>
+        <%  var color4="green" %>
+        <%  var color5="yellow" %>
+        <%  var color6="purple" %>
+        <%  var color7="orange" %>
+        <%  var color8="pink" %>
+
+       <% }else if(items.grade=="H2"){ %>
+        <%  var color8="red" %>
+        <%  var color5="blue" %>
+        <%  var color3="black" %>
+        <%  var color2="green" %>
+        <%  var color6="yellow" %>
+        <%  var color7="purple" %>
+        <%  var color1="orange" %>
+        <%  var color8="pink" %>
+       <% }else if(items.grade=="H3"){ %>
+     
+       <% } %>
       <tr>
-        <th>1組-記録</th>
-        <th>2組-記録</th>
-        <th>3組-記録</th>
-        <th>4組-記録</th>
-        <th>5組-記録</th>
-        <th>6組-記録</th>
-        <th>7組-記録</th>
-        <th>8組-記録</th>
+        <th class="<%= color1 %>">1組-記録</th>
+        <th class="<%= color2 %>">2組-記録</th>
+        <th class="<%= color3 %>">3組-記録</th>
+        <th class="<%= color4 %>">4組-記録</th>
+        <th class="<%= color5 %>">5組-記録</th>
+        <th class="<%= color6 %>">6組-記録</th>
+        <th class="<%= color7 %>">7組-記録</th>
+        <th class="<%= color8 %>">8組-記録</th>
 
       </tr>
       <tr>

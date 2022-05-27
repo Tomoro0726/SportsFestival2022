@@ -69,3 +69,7 @@ body .menu {
   color: #0000FF;
   font-size: 1.3vw;
 }
+
+body table .color {
+  width: 5%;
+}

@@ -15,6 +15,14 @@ body table {
   margin-bottom: 5vh;
 }
 
+body table tr .syousai {
+  width: 10%;
+}
+
+body table tr .with {
+  width: 23%;
+}
+
 body table tr th {
   border: 2px solid #000000;
   font-size: 1vw;
@@ -68,6 +76,6 @@ body .menu {
   font-size: 1.3vw;
 }
 
-body .with {
-  width: 23%;
+body table .color {
+  width: 3.5%;
 }

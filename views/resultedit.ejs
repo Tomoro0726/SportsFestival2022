@@ -18,7 +18,7 @@
   <h1></h1>
 
   </h1>
-  <form action="/colorresultedit/<%= items.id %>" method="post">
+  <form action="/resultedit/<%= items.id %>" method="post">
     <table>
       <tr>
         <th>1組-記録</th>
@@ -103,23 +103,29 @@
       </tr>
       <tr>
         <th><select class="input select" name="oneh">
+          <% var ngen=null %>
+            <% var gen=null %>
             <% if(items.oneh=="半減"){ %>
             <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
+            <%}else if(items.oneh==""){%>
             <% var ngen="selected" %>
 
             <% }; %>
+            
+
             <option<%= gen %>>
               </option>
               <option<%= ngen %>>半減</option>
                 <option></option>
           </select></th>
         <th><select class="input select" name="twoh">
-
+          <% var ngen=null %>
+          <% var gen=null %>
             <% if(items.twoh=="半減"){ %>
             <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
+            <%}else if(items.twoh==""){%>
             <% var ngen="selected" %>
+            
 
             <% }; %>
             <option<%= gen %>>
@@ -129,11 +135,13 @@
 
           </select></th>
         <th><select class="input select" name="threeh">
-
+          <% var ngen=null %>
+          <% var gen=null %>
             <% if(items.threeh=="半減"){ %>
             <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
+            <%}else if(items.threeh==""){%>
             <% var ngen="selected" %>
+            
 
             <% }; %>
             <option<%= gen %>>
@@ -143,11 +151,13 @@
 
           </select></th>
         <th><select class="input select" name="fourh">
-
+          <% var ngen=null %>
+          <% var gen=null %>
             <% if(items.fourh=="半減"){ %>
             <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
+            <%}else if(items.fourh==""){%>
             <% var ngen="selected" %>
+            
 
             <% }; %>
             <option<%= gen %>>
@@ -157,11 +167,13 @@
 
           </select></th>
         <th><select class="input select" name="fiveh">
-
+          <% var ngen=null %>
+          <% var gen=null %>
             <% if(items.fiveh=="半減"){ %>
             <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
+            <%}else if(items.fiveh==""){%>
             <% var ngen="selected" %>
+            
 
             <% }; %>
             <option<%= gen %>>
@@ -171,11 +183,13 @@
 
           </select></th>
         <th><select class="input select" name="sixh">
-
+          <% var ngen=null %>
+          <% var gen=null %>
             <% if(items.sixh=="半減"){ %>
             <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
+            <%}else if(items.sixh==""){%>
             <% var ngen="selected" %>
+            
 
             <% }; %>
             <option<%= gen %>>
@@ -185,13 +199,16 @@
 
           </select></th>
         <th><select class="input select" name="sevenh">
-
+          <% var ngen=null %>
+          <% var gen=null %>
             <% if(items.sevenh=="半減"){ %>
             <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
+            <%}else if(items.sevenh==""){%>
             <% var ngen="selected" %>
+            
 
             <% }; %>
+            
             <option<%= gen %>>
               </option>
               <option<%= ngen %>>半減</option>
@@ -199,13 +216,16 @@
 
           </select></th>
         <th><select class="input select" name="eighth">
-
+          <% var ngen=null %>
+          <% var gen=null %>
             <% if(items.eighth=="半減"){ %>
             <% var gen="selected" %>
-            <%}else if(items.hyouka==""){%>
+            <%}else if(items.eighth==""){%>
             <% var ngen="selected" %>
+            
 
             <% }; %>
+            
             <option<%= gen %>>
               </option>
               <option<%= ngen %>>半減</option>

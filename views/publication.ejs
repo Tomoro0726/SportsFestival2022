@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,10 @@
 
   <link rel="stylesheet" href="/css/publication.css">
 </head>
+
 <body>
+  
+
   <table>
     <tr>
       <th colspan="2" class="with">
@@ -128,7 +132,7 @@
       <th><%=all[6] %></th>
       <th><%=all[7] %></th>
 
-      <th><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
+      <th  class="syousai"><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
 
 
 
@@ -229,19 +233,19 @@
       <th><%= sevenall %></th>
       <th><%= eightall %></th>
 
-      <% var allrank=[]%>
-      <% allrank.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,eightall)%>
-      <% var sorted=allrank.slice().sort(function(a, b){return b - a});%>
-      <% var sougouzyunni = allrank.slice().map(function(x){return sorted.indexOf(x) + 1});%>
-      <th><%= sougouzyunni[0] %></th>
-      <th><%= sougouzyunni[1] %></th>
-      <th><%= sougouzyunni[2] %></th>
-      <th><%= sougouzyunni[3] %></th>
-      <th><%= sougouzyunni[4] %></th>
-      <th><%= sougouzyunni[5] %></th>
-      <th><%= sougouzyunni[6] %></th>
-      <th><%= sougouzyunni[7] %></th>
-      <th><%= sougouzyunni[8] %></th>
+      <% var allrank1=[]%>
+      <% allrank1.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,eightall)%>
+      <% var sorted=allrank1.slice().sort(function(a, b){return b - a});%>
+      <% var sougouzyunni1 = allrank1.slice().map(function(x){return sorted.indexOf(x) + 1});%>
+      <th><%= sougouzyunni1[0] %></th>
+      <th><%= sougouzyunni1[1] %></th>
+      <th><%= sougouzyunni1[2] %></th>
+      <th><%= sougouzyunni1[3] %></th>
+      <th><%= sougouzyunni1[4] %></th>
+      <th><%= sougouzyunni1[5] %></th>
+      <th><%= sougouzyunni1[6] %></th>
+      <th><%= sougouzyunni1[7] %></th>
+      <th><%= sougouzyunni1[8] %></th>
     </tr>
   </table>
   <!--変数リセット-->
@@ -367,7 +371,7 @@
       <th><%=all2[6] %></th>
       <th><%=all2[7] %></th>
 
-      <th><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
+      <th  class="syousai"><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
 
 
 
@@ -469,19 +473,19 @@
       <th><%= sevenall %></th>
       <th><%= eightall %></th>
 
-      <% var allrank=[]%>
-      <% allrank.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,eightall)%>
-      <% var sorted=allrank.slice().sort(function(a, b){return b - a});%>
-      <% var sougouzyunni = allrank.slice().map(function(x){return sorted.indexOf(x) + 1});%>
-      <th><%= sougouzyunni[0] %></th>
-      <th><%= sougouzyunni[1] %></th>
-      <th><%= sougouzyunni[2] %></th>
-      <th><%= sougouzyunni[3] %></th>
-      <th><%= sougouzyunni[4] %></th>
-      <th><%= sougouzyunni[5] %></th>
-      <th><%= sougouzyunni[6] %></th>
-      <th><%= sougouzyunni[7] %></th>
-      <th><%= sougouzyunni[8] %></th>
+      <% var allrank2=[]%>
+      <% allrank2.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,eightall)%>
+      <% var sorted=allrank2.slice().sort(function(a, b){return b - a});%>
+      <% var sougouzyunni2 = allrank2.slice().map(function(x){return sorted.indexOf(x) + 1});%>
+      <th><%= sougouzyunni2[0] %></th>
+      <th><%= sougouzyunni2[1] %></th>
+      <th><%= sougouzyunni2[2] %></th>
+      <th><%= sougouzyunni2[3] %></th>
+      <th><%= sougouzyunni2[4] %></th>
+      <th><%= sougouzyunni2[5] %></th>
+      <th><%= sougouzyunni2[6] %></th>
+      <th><%= sougouzyunni2[7] %></th>
+      <th><%= sougouzyunni2[8] %></th>
     </tr>
   </table>
   <table>
@@ -605,7 +609,7 @@
       <th><%=all2[6] %></th>
       <th><%=all2[7] %></th>
 
-      <th><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
+      <th class="syousai"><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
 
 
 
@@ -707,22 +711,23 @@
       <th><%= sevenall %></th>
       <th><%= eightall %></th>
 
-      <% var allrank=[]%>
-      <% allrank.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,eightall)%>
-      <% var sorted=allrank.slice().sort(function(a, b){return b - a});%>
-      <% var sougouzyunni = allrank.slice().map(function(x){return sorted.indexOf(x) + 1});%>
-      <th><%= sougouzyunni[0] %></th>
-      <th><%= sougouzyunni[1] %></th>
-      <th><%= sougouzyunni[2] %></th>
-      <th><%= sougouzyunni[3] %></th>
-      <th><%= sougouzyunni[4] %></th>
-      <th><%= sougouzyunni[5] %></th>
-      <th><%= sougouzyunni[6] %></th>
-      <th><%= sougouzyunni[7] %></th>
-      <th><%= sougouzyunni[8] %></th>
+      <% var allrank3=[]%>
+      <% allrank3.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,eightall)%>
+      <% var sorted=allrank3.slice().sort(function(a, b){return b - a});%>
+      <% var sougouzyunni3 = allrank3.slice().map(function(x){return sorted.indexOf(x) + 1});%>
+      <th><%= sougouzyunni3[0] %></th>
+      <th><%= sougouzyunni3[1] %></th>
+      <th><%= sougouzyunni3[2] %></th>
+      <th><%= sougouzyunni3[3] %></th>
+      <th><%= sougouzyunni3[4] %></th>
+      <th><%= sougouzyunni3[5] %></th>
+      <th><%= sougouzyunni3[6] %></th>
+      <th><%= sougouzyunni3[7] %></th>
+      <th><%= sougouzyunni3[8] %></th>
     </tr>
   </table>
   <table>
+
     <tr>
       <th colspan="2" class="with">
         色別競技
@@ -739,22 +744,22 @@
     </tr>
     <tr>
       <th colspan="2"> 競技名</th>
-      <th>1組</th>
-      <th>2組</th>
-      <th>3組</th>
-      <th>4組</th>
-      <th>5組</th>
-      <th>6組</th>
-      <th>7組</th>
-      <th>8組</th>
-      <th>1組</th>
-      <th>2組</th>
-      <th>3組</th>
-      <th>4組</th>
-      <th>5組</th>
-      <th>6組</th>
-      <th>7組</th>
-      <th>8組</th>
+      <th class="color">赤</th>
+      <th class="color">オレンジ</th>
+      <th class="color">黄</th>
+      <th class="color">緑</th>
+      <th class="color">青</th>
+      <th class="color">紫</th>
+      <th class="color">黒</th>
+      <th class="color">ピンク</th>
+      <th class="color">赤</th>
+      <th class="color">オレンジ</th>
+      <th class="color">黄</th>
+      <th class="color">緑</th>
+      <th class="color">青</th>
+      <th class="color">紫</th>
+      <th class="color">黒</th>
+      <th class="color">ピンク</th>
       <th>記録</th>
     </tr>
 
@@ -841,7 +846,7 @@
       <th><%=all2[6] %></th>
       <th><%=all2[7] %></th>
 
-      <th><a href="/colorpublication/<%= item.id %>">詳細閲覧</a></th>
+      <th class="syousai"><a href="/colorpublication/<%= item.id %>">詳細閲覧</a></th>
 
 
 
@@ -943,19 +948,19 @@
       <th><%= sevenall %></th>
       <th><%= eightall %></th>
 
-      <% var allrank=[]%>
-      <% allrank.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,eightall)%>
-      <% var sorted=allrank.slice().sort(function(a, b){return b - a});%>
-      <% var sougouzyunni = allrank.slice().map(function(x){return sorted.indexOf(x) + 1});%>
-      <th><%= sougouzyunni[0] %></th>
-      <th><%= sougouzyunni[1] %></th>
-      <th><%= sougouzyunni[2] %></th>
-      <th><%= sougouzyunni[3] %></th>
-      <th><%= sougouzyunni[4] %></th>
-      <th><%= sougouzyunni[5] %></th>
-      <th><%= sougouzyunni[6] %></th>
-      <th><%= sougouzyunni[7] %></th>
-      <th><%= sougouzyunni[8] %></th>
+      <% var allrank4=[]%>
+      <% allrank4.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,eightall)%>
+      <% var sorted=allrank4.slice().sort(function(a, b){return b - a});%>
+      <% var sougouzyunni4 = allrank4.slice().map(function(x){return sorted.indexOf(x) + 1});%>
+      <th><%= sougouzyunni4[0] %></th>
+      <th><%= sougouzyunni4[1] %></th>
+      <th><%= sougouzyunni4[2] %></th>
+      <th><%= sougouzyunni4[3] %></th>
+      <th><%= sougouzyunni4[4] %></th>
+      <th><%= sougouzyunni4[5] %></th>
+      <th><%= sougouzyunni4[6] %></th>
+      <th><%= sougouzyunni4[7] %></th>
+      <th><%= sougouzyunni4[8] %></th>
     </tr>
   </table>
   <table>
@@ -974,129 +979,145 @@
       <th colspan="2">
         学年
       </th>
-      <th>1組</th>
-      <th>2組</th>
-      <th>3組</th>
-      <th>4組</th>
-      <th>5組</th>
-      <th>6組</th>
-      <th>7組</th>
-      <th>8組</th>
-      <th>1組</th>
-      <th>2組</th>
-      <th>3組</th>
-      <th>4組</th>
-      <th>5組</th>
-      <th>6組</th>
-      <th>7組</th>
-      <th>8組</th>
+      <th class="color">赤</th>
+      <th class="color">オレンジ</th>
+      <th class="color">黄</th>
+      <th class="color">緑</th>
+      <th class="color">青</th>
+      <th class="color">紫</th>
+      <th class="color">黒</th>
+      <th class="color">ピンク</th>
+      <th class="color">赤</th>
+      <th class="color">オレンジ</th>
+      <th class="color">黄</th>
+      <th class="color">緑</th>
+      <th class="color">青</th>
+      <th class="color">紫</th>
+      <th class="color">黒</th>
+      <th class="color">ピンク</th>
     </tr>
     <tr>
       <th colspan="2">
         H1
       </th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><%= allrank1[0] %></th>
+      <th><%= allrank1[6] %></th>
+      <th><%= allrank1[4] %></th>
+      <th><%= allrank1[3] %></th>
+      <th><%= allrank1[1] %></th>
+      <th><%= allrank1[5] %></th>
+      <th><%= allrank1[2] %></th>
+      <th><%= allrank1[7] %></th>
+
+      <th><%= sougouzyunni1[0] %></th>
+      <th><%= sougouzyunni1[6] %></th>
+      <th><%= sougouzyunni1[4] %></th>
+      <th><%= sougouzyunni1[3] %></th>
+      <th><%= sougouzyunni1[1] %></th>
+      <th><%= sougouzyunni1[5] %></th>
+      <th><%= sougouzyunni1[2] %></th>
+      <th><%= sougouzyunni1[7] %></th>
+
+
     </tr>
     <tr>
       <th colspan="2">
         H2
       </th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><%= allrank2[7] %></th>
+      <th><%= allrank2[0] %></th>
+      <th><%= allrank2[6] %></th>
+      <th><%= allrank2[2] %></th>
+      <th><%= allrank2[5] %></th>
+      <th><%= allrank2[7] %></th>
+      <th><%= allrank2[3] %></th>
+      <th><%= allrank2[4] %></th>
+      <th><%= sougouzyunni2[7] %></th>
+      <th><%= sougouzyunni2[0] %></th>
+      <th><%= sougouzyunni2[6] %></th>
+      <th><%= sougouzyunni2[2] %></th>
+      <th><%= sougouzyunni2[5] %></th>
+      <th><%= sougouzyunni2[7] %></th>
+      <th><%= sougouzyunni2[3] %></th>
+      <th><%= sougouzyunni2[4] %></th>
     </tr>
     <tr>
       <th colspan="2">
         H3
       </th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><%= allrank3[2] %></th>
+      <th><%= allrank3[4] %></th>
+      <th><%= allrank3[0] %></th>
+      <th><%= allrank3[3] %></th>
+      <th><%= allrank3[7] %></th>
+      <th><%= allrank3[6] %></th>
+      <th><%= allrank3[1] %></th>
+      <th><%= allrank3[5] %></th>
+      <th><%= sougouzyunni3[2] %></th>
+      <th><%= sougouzyunni3[4] %></th>
+      <th><%= sougouzyunni3[0] %></th>
+      <th><%= sougouzyunni3[3] %></th>
+      <th><%= sougouzyunni3[7] %></th>
+      <th><%= sougouzyunni3[6] %></th>
+      <th><%= sougouzyunni3[1] %></th>
+      <th><%= sougouzyunni3[7] %></th>
     </tr>
     <tr>
       <th colspan="2">
         色別競技
       </th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><%= allrank4[0] %></th>
+      <th><%= allrank4[1] %></th>
+      <th><%= allrank4[2] %></th>
+      <th><%= allrank4[3] %></th>
+      <th><%= allrank4[4] %></th>
+      <th><%= allrank4[5] %></th>
+      <th><%= allrank4[6] %></th>
+      <th><%= allrank4[7] %></th>
+      <th><%= sougouzyunni4[0] %></th>
+      <th><%= sougouzyunni4[1] %></th>
+      <th><%= sougouzyunni4[2] %></th>
+      <th><%= sougouzyunni4[3] %></th>
+      <th><%= sougouzyunni4[4] %></th>
+      <th><%= sougouzyunni4[5] %></th>
+      <th><%= sougouzyunni4[6] %></th>
+      <th><%= sougouzyunni4[7] %></th>
     </tr>
     <tr>
       <th colspan="2">
         合計
       </th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
 
+      <th><%= allrank1[0]+allrank2[7]+allrank3[2]+allrank4[0] %></th>
+      <th><%= allrank1[6]+allrank2[0]+allrank3[4]+allrank4[1] %></th>
+      <th><%= allrank1[4]+allrank2[5]+allrank3[0]+allrank4[2] %></th>
+      <th><%= allrank1[3]+allrank2[1]+allrank3[3]+allrank4[3] %></th>
+      <th><%= allrank1[1]+allrank2[4]+allrank3[7]+allrank4[4] %></th>
+      <th><%= allrank1[5]+allrank2[6]+allrank3[6]+allrank4[5] %></th>
+      <th><%= allrank1[2]+allrank2[2]+allrank3[1]+allrank4[6] %></th>
+      <th><%= allrank1[7]+allrank2[3]+allrank3[5]+allrank4[7] %></th>
+      <% var allrank5=[]%>
+      
+      <% allrank5.push(allrank1[0]+allrank2[7]+allrank3[2]+allrank4[0]) %>
+      <% allrank5.push(allrank1[6]+allrank2[0]+allrank3[4]+allrank4[1]) %>
+      <% allrank5.push(allrank1[4]+allrank2[5]+allrank3[0]+allrank4[2]) %>
+      <% allrank5.push(allrank1[3]+allrank2[1]+allrank3[3]+allrank4[3]) %>
+      <% allrank5.push(allrank1[1]+allrank2[4]+allrank3[7]+allrank4[4]) %>
+      <% allrank5.push(allrank1[5]+allrank2[6]+allrank3[6]+allrank4[5]) %>
+      <% allrank5.push(allrank1[2]+allrank2[2]+allrank3[1]+allrank4[6]) %>
+      <% allrank5.push(allrank1[7]+allrank2[3]+allrank3[5]+allrank4[7]) %>
+
+      <% var sorted=allrank5.slice().sort(function(a, b){return b - a});%>
+      <% var sougouzyunni5 = allrank5.slice().map(function(x){return sorted.indexOf(x) + 1});%>
+      <th><%= sougouzyunni5[0] %></th>
+      <th><%= sougouzyunni5[1] %></th>
+      <th><%= sougouzyunni5[2] %></th>
+      <th><%= sougouzyunni5[3] %></th>
+      <th><%= sougouzyunni5[4] %></th>
+      <th><%= sougouzyunni5[5] %></th>
+      <th><%= sougouzyunni5[6] %></th>
+      <th><%= sougouzyunni5[7] %></th>
+    </tr>
 
 
 
@@ -1107,4 +1128,5 @@
 
 
 </body>
+
 </html>
