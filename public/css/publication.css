@@ -20,7 +20,15 @@ body table tr .syousai {
 }
 
 body table tr .with {
-  width: 23%;
+  width: 17%;
+}
+
+body table tr .with2 {
+  width: 13%;
+}
+
+body table tr .with3 {
+  width: 11%;
 }
 
 body table tr th {
