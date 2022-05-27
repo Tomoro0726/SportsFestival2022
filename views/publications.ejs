@@ -21,6 +21,7 @@
   <form action="/resultedit/<%= items.id %>" method="post">
     <table>
       <% if (items.grade =="H1" ){ %>
+        <%=  %>
         <%  var color1="red" %>
         <%  var color2="blue" %>
         <%  var color3="black" %>
@@ -38,9 +39,16 @@
         <%  var color6="yellow" %>
         <%  var color7="purple" %>
         <%  var color1="orange" %>
-        <%  var color8="pink" %>
+        <%  var color4="pink" %>
        <% }else if(items.grade=="H3"){ %>
-     
+        <%  var color3="red" %>
+        <%  var color5="blue" %>
+        <%  var color1="black" %>
+        <%  var color4="green" %>
+        <%  var color8="yellow" %>
+        <%  var color7="purple" %>
+        <%  var color2="orange" %>
+        <%  var color6="pink" %>
        <% } %>
       <tr>
         <th class="<%= color1 %>">1組-記録</th>

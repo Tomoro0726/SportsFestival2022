@@ -15,6 +15,46 @@ body table {
   margin-bottom: 5vh;
 }
 
+body table tr .red {
+  color: #FFFFFF;
+  background-color: #FF0000;
+}
+
+body table tr .blue {
+  color: #FFFFFF;
+  background-color: #0000ff;
+}
+
+body table tr .green {
+  color: #FFFFFF;
+  background-color: #34a853;
+}
+
+body table tr .orange {
+  color: #FFFFFF;
+  background-color: #ff9900;
+}
+
+body table tr .yellow {
+  color: #FFFFFF;
+  background-color: #f1c232;
+}
+
+body table tr .purple {
+  color: #FFFFFF;
+  background-color: #9900ff;
+}
+
+body table tr .black {
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+body table tr .pink {
+  color: #FFFFFF;
+  background-color: #ff00ff;
+}
+
 body table tr .syousai {
   width: 10%;
 }

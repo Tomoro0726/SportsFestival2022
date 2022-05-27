@@ -11,7 +11,36 @@
 </head>
 
 <body>
-  
+  <% if (items.grade =="H1" ){ %>
+    <%=  %>
+    <%  var color1="red" %>
+    <%  var color2="blue" %>
+    <%  var color3="black" %>
+    <%  var color4="green" %>
+    <%  var color5="yellow" %>
+    <%  var color6="purple" %>
+    <%  var color7="orange" %>
+    <%  var color8="pink" %>
+
+   <% }else if(items.grade=="H2"){ %>
+    <%  var color8="red" %>
+    <%  var color5="blue" %>
+    <%  var color3="black" %>
+    <%  var color2="green" %>
+    <%  var color6="yellow" %>
+    <%  var color7="purple" %>
+    <%  var color1="orange" %>
+    <%  var color4="pink" %>
+   <% }else if(items.grade=="H3"){ %>
+    <%  var color3="red" %>
+    <%  var color8="blue" %>
+    <%  var color2="black" %>
+    <%  var color4="green" %>
+    <%  var color1="yellow" %>
+    <%  var color7="purple" %>
+    <%  var color5="orange" %>
+    <%  var color6="pink" %>
+   <% } %>
 
   <table>
     <tr>
@@ -31,22 +60,22 @@
     <tr>
       <th> 競技名</th>
       <th>学年</th>
-      <th>1組</th>
-      <th>2組</th>
-      <th>3組</th>
-      <th>4組</th>
-      <th>5組</th>
-      <th>6組</th>
-      <th>7組</th>
-      <th>8組</th>
-      <th>1組</th>
-      <th>2組</th>
-      <th>3組</th>
-      <th>4組</th>
-      <th>5組</th>
-      <th>6組</th>
-      <th>7組</th>
-      <th>8組</th>
+      <th class="red">1組</th>
+      <th class="blue">2組</th>
+      <th class="black">3組</th>
+      <th class="green">4組</th>
+      <th class="yellow">5組</th>
+      <th class="purple">6組</th>
+      <th class="orange">7組</th>
+      <th class="pink">8組</th>
+      <th class="red">1組</th>
+      <th class="blue">2組</th>
+      <th class="black">3組</th>
+      <th class="green">4組</th>
+      <th class="yellow">5組</th>
+      <th class="purple">6組</th>
+      <th class="orange">7組</th>
+      <th class="pink">8組</th>
       <th>記録</th>
     </tr>
     <% items.forEach((item)=> {%>
@@ -268,22 +297,22 @@
     <tr>
       <th> 競技名</th>
       <th>学年</th>
-      <th>1組</th>
-      <th>2組</th>
-      <th>3組</th>
-      <th>4組</th>
-      <th>5組</th>
-      <th>6組</th>
-      <th>7組</th>
-      <th>8組</th>
-      <th>1組</th>
-      <th>2組</th>
-      <th>3組</th>
-      <th>4組</th>
-      <th>5組</th>
-      <th>6組</th>
-      <th>7組</th>
-      <th>8組</th>
+      <th class="orange">1組</th>
+      <th class="green">2組</th>
+      <th class="black">3組</th>
+      <th class="pink">4組</th>
+      <th class="blue">5組</th>
+      <th class="yellow">6組</th>
+      <th class="purple">7組</th>
+      <th class="red">8組</th>
+      <th class="orange">1組</th>
+      <th class="green">2組</th>
+      <th class="black">3組</th>
+      <th class="pink">4組</th>
+      <th class="blue">5組</th>
+      <th class="yellow">6組</th>
+      <th class="purple">7組</th>
+      <th class="red">8組</th>
       <th>記録</th>
     </tr>
 
@@ -506,22 +535,22 @@
     <tr>
       <th> 競技名</th>
       <th>学年</th>
-      <th>1組</th>
-      <th>2組</th>
-      <th>3組</th>
-      <th>4組</th>
-      <th>5組</th>
-      <th>6組</th>
-      <th>7組</th>
-      <th>8組</th>
-      <th>1組</th>
-      <th>2組</th>
-      <th>3組</th>
-      <th>4組</th>
-      <th>5組</th>
-      <th>6組</th>
-      <th>7組</th>
-      <th>8組</th>
+      <th class="yellow">1組</th>
+      <th class="black">2組</th>
+      <th class="red">3組</th>
+      <th class="green">4組</th>
+      <th class="orange">5組</th>
+      <th class="pink">6組</th>
+      <th class="purple">7組</th>
+      <th class="blue">8組</th>
+      <th class="yellow">1組</th>
+      <th class="black">2組</th>
+      <th class="red">3組</th>
+      <th class="green">4組</th>
+      <th class="orange">5組</th>
+      <th class="pink">6組</th>
+      <th class="purple">7組</th>
+      <th class="blue">8組</th>
       <th>記録</th>
     </tr>
 
@@ -744,22 +773,22 @@
     </tr>
     <tr>
       <th colspan="2"> 競技名</th>
-      <th class="color">赤</th>
-      <th class="color">オレンジ</th>
-      <th class="color">黄</th>
-      <th class="color">緑</th>
-      <th class="color">青</th>
-      <th class="color">紫</th>
-      <th class="color">黒</th>
-      <th class="color">ピンク</th>
-      <th class="color">赤</th>
-      <th class="color">オレンジ</th>
-      <th class="color">黄</th>
-      <th class="color">緑</th>
-      <th class="color">青</th>
-      <th class="color">紫</th>
-      <th class="color">黒</th>
-      <th class="color">ピンク</th>
+      <th class="color red">赤</th>
+      <th class="color orange">オレンジ</th>
+      <th class="color yellow">黄</th>
+      <th class="color green">緑</th>
+      <th class="color blue">青</th>
+      <th class="color purple">紫</th>
+      <th class="color black">黒</th>
+      <th class="color pink">ピンク</th>
+      <th class="color red">赤</th>
+      <th class="color orange">オレンジ</th>
+      <th class="color yellow">黄</th>
+      <th class="color green">緑</th>
+      <th class="color blue">青</th>
+      <th class="color purple">紫</th>
+      <th class="color black">黒</th>
+      <th class="color pink">ピンク</th>
       <th>記録</th>
     </tr>
 
@@ -979,22 +1008,22 @@
       <th colspan="2">
         学年
       </th>
-      <th class="color">赤</th>
-      <th class="color">オレンジ</th>
-      <th class="color">黄</th>
-      <th class="color">緑</th>
-      <th class="color">青</th>
-      <th class="color">紫</th>
-      <th class="color">黒</th>
-      <th class="color">ピンク</th>
-      <th class="color">赤</th>
-      <th class="color">オレンジ</th>
-      <th class="color">黄</th>
-      <th class="color">緑</th>
-      <th class="color">青</th>
-      <th class="color">紫</th>
-      <th class="color">黒</th>
-      <th class="color">ピンク</th>
+      <th class="color red">赤</th>
+      <th class="color orange">オレンジ</th>
+      <th class="color yellow">黄</th>
+      <th class="color green">緑</th>
+      <th class="color blue">青</th>
+      <th class="color purple">紫</th>
+      <th class="color black">黒</th>
+      <th class="color pink">ピンク</th>
+      <th class="color red">赤</th>
+      <th class="color orange">オレンジ</th>
+      <th class="color yellow">黄</th>
+      <th class="color green">緑</th>
+      <th class="color blue">青</th>
+      <th class="color purple">紫</th>
+      <th class="color black">黒</th>
+      <th class="color pink">ピンク</th>
     </tr>
     <tr>
       <th colspan="2">
@@ -1026,12 +1055,12 @@
       </th>
       <th><%= allrank2[7] %></th>
       <th><%= allrank2[0] %></th>
+      <th><%= allrank2[5] %></th>
+      <th><%= allrank2[1] %></th>
+      <th><%= allrank2[4] %></th>
       <th><%= allrank2[6] %></th>
       <th><%= allrank2[2] %></th>
-      <th><%= allrank2[5] %></th>
-      <th><%= allrank2[7] %></th>
       <th><%= allrank2[3] %></th>
-      <th><%= allrank2[4] %></th>
       <th><%= sougouzyunni2[7] %></th>
       <th><%= sougouzyunni2[0] %></th>
       <th><%= sougouzyunni2[6] %></th>
