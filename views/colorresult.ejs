@@ -64,7 +64,7 @@
     <!--タイム統合処理-->
     <% for (let i = 0; i < tokuten.length; i++) { %>
     <% if (time2[i] !== null) { %>
-    <% time1[i]=time2[i] %>
+    <% time1[i]=time2[i]+time1[i] %>
     <% } %>
     <% } %>
     <!--順位処理-->
