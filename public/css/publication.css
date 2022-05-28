@@ -59,23 +59,10 @@ body table tr .syousai {
   width: 10%;
 }
 
-body table tr .with {
-  width: 17%;
-}
-
-body table tr .with2 {
-  width: 13%;
-}
-
-body table tr .with3 {
-  width: 11%;
-}
-
 body table tr th {
   border: 2px solid #000000;
   font-size: 1vw;
   padding: 1px;
-  width: auto;
 }
 
 body table tr th .input {
@@ -94,6 +81,15 @@ body table tr th .number {
 
 body table tr th .select {
   width: 5vw;
+}
+
+body table tr .with {
+  width: 7vw;
+}
+
+body table tr .with2 {
+  width: 7vw;
+  background-color: #FF0000;
 }
 
 body .submit {
@@ -122,8 +118,4 @@ body .menu {
   left: 2vw;
   color: #0000FF;
   font-size: 1.3vw;
-}
-
-body table .color {
-  width: 3.5%;
 }

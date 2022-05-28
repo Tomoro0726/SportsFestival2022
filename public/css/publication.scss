@@ -16,53 +16,60 @@ body {
       .red{
         color: #FFFFFF;
         background-color: #FF0000; 
+        
       }
       .blue{
         color: #FFFFFF;
         background-color: #0000ff; 
+        
+
       }
       .green{
         color: #FFFFFF;
         background-color: #34a853; 
+        
+
       }
       .orange{
         color: #FFFFFF;
         background-color: #ff9900; 
+        
+
       }
       .yellow{
         color: #FFFFFF;
         background-color: #f1c232; 
+        
+
       }
       .purple{
         color: #FFFFFF;
         background-color: #9900ff; 
+        
+
       }
       .black{
         color: #FFFFFF;
         background-color: #000000; 
+        
+
       }
       .pink{
         color: #FFFFFF;
+        
+
         background-color: #ff00ff; 
       }
       .syousai{
         width: 10%;
       }
-      .with {
-        width: 17%;
-      }
-      .with2 {
-        width: 13%;
-      }
-      .with3 {
-        width: 11%;
-      }
+      
       
       th {
         border: 2px solid #000000;
         font-size: 1vw;
         padding: 1px;
-        width: auto;
+        
         
         .input {
           border: none;
@@ -85,6 +92,15 @@ body {
 
 
       }
+      .with {
+        width: 7vw;
+        
+      }
+      .with2 {
+        width: 7vw;
+        background-color: #FF0000;
+      }
+
     }
 
     margin-bottom: 5vh;
@@ -119,9 +135,4 @@ body {
   }
 
 
-  table{
-    .color{
-      width: 3.5%;
-    }
-  }
 }
