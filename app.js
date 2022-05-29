@@ -2,7 +2,7 @@ const e = require("express");
 const express = require("express");
 const app = express();
 app.use(express.static("public"));
-const mysql = require("mysql");
+const mysql = require("mysql2");
 var os = require('os');
 console.log(getLocalAddress());
 
