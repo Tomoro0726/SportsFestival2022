@@ -13,29 +13,32 @@
 <body>
   <% if (items.grade =="M1" ){ %>
   <%=  %>
-  <%  var color1="red" %>
+  <%  var color1="black" %>
   <%  var color2="blue" %>
-  <%  var color3="black" %>
-  <%  var color4="green" %>
-  <%  var color5="yellow" %>
-  <%  var color6="purple" %>
-  <%  var color7="orange" %>
+  <%  var color3="red" %>
+  <%  var color4="orange" %>
+  <%  var color5="purple" %>
+  <%  var color6="yellow" %>
+  <%  var color7="green" %>
 
   <% }else if(items.grade=="M2"){ %>
-  <%  var color5="blue" %>
-  <%  var color3="black" %>
-  <%  var color2="green" %>
+  <%  var color1="purple" %>
+  <%  var color2="orange" %>
+  <%  var color3="green" %>
+  <%  var color4="black" %>
+  <%  var color5="red" %>
   <%  var color6="yellow" %>
-  <%  var color7="purple" %>
-  <%  var color1="orange" %>
+  <%  var color7="blue" %>
   <% }else if(items.grade=="M3"){ %>
-  <%  var color3="red" %>
-  <%  var color2="black" %>
+  <%  var color1="orange" %>
+  <%  var color2="red" %>
+  <%  var color3="yellow" %>
   <%  var color4="green" %>
-  <%  var color1="yellow" %>
-  <%  var color7="purple" %>
-  <%  var color5="orange" %>
+  <%  var color5="black" %>
+  <%  var color6="blue" %>
+  <%  var color7="pueple" %>
   <% } %>
+
 
   <table>
     <tr>
@@ -1075,22 +1078,22 @@
         合計
       </th>
 
-      <th><%= allrank1[0]+allrank2[7]+allrank3[2]+allrank4[0] %></th>
-      <th><%= allrank1[6]+allrank2[0]+allrank3[4]+allrank4[1] %></th>
-      <th><%= allrank1[4]+allrank2[5]+allrank3[0]+allrank4[2] %></th>
-      <th><%= allrank1[3]+allrank2[1]+allrank3[3]+allrank4[3] %></th>
-      <th><%= allrank1[1]+allrank2[4]+allrank3[7]+allrank4[4] %></th>
-      <th><%= allrank1[5]+allrank2[6]+allrank3[6]+allrank4[5] %></th>
-      <th><%= allrank1[2]+allrank2[2]+allrank3[1]+allrank4[6] %></th>
+      <th><%= allrank1[2]+allrank2[4]+allrank3[1]+allrank4[0] %></th>
+      <th><%= allrank1[3]+allrank2[1]+allrank3[0]+allrank4[1] %></th>
+      <th><%= allrank1[5]+allrank2[5]+allrank3[2]+allrank4[2] %></th>
+      <th><%= allrank1[6]+allrank2[2]+allrank3[3]+allrank4[3] %></th>
+      <th><%= allrank1[1]+allrank2[6]+allrank3[5]+allrank4[4] %></th>
+      <th><%= allrank1[4]+allrank2[0]+allrank3[6]+allrank4[5] %></th>
+      <th><%= allrank1[0]+allrank2[3]+allrank3[4]+allrank4[6] %></th>
       <% var allrank5=[]%>
 
-      <% allrank5.push(allrank1[0]+allrank2[7]+allrank3[2]+allrank4[0]) %>
-      <% allrank5.push(allrank1[6]+allrank2[0]+allrank3[4]+allrank4[1]) %>
-      <% allrank5.push(allrank1[4]+allrank2[5]+allrank3[0]+allrank4[2]) %>
-      <% allrank5.push(allrank1[3]+allrank2[1]+allrank3[3]+allrank4[3]) %>
-      <% allrank5.push(allrank1[1]+allrank2[4]+allrank3[7]+allrank4[4]) %>
-      <% allrank5.push(allrank1[5]+allrank2[6]+allrank3[6]+allrank4[5]) %>
-      <% allrank5.push(allrank1[2]+allrank2[2]+allrank3[1]+allrank4[6]) %>
+      <% allrank5.push(allrank1[2]+allrank2[4]+allrank3[1]+allrank4[0]) %>
+      <% allrank5.push(allrank1[3]+allrank2[1]+allrank3[0]+allrank4[1]) %>
+      <% allrank5.push(allrank1[5]+allrank2[5]+allrank3[2]+allrank4[2]) %>
+      <% allrank5.push(allrank1[6]+allrank2[2]+allrank3[3]+allrank4[3]) %>
+      <% allrank5.push(allrank1[1]+allrank2[6]+allrank3[5]+allrank4[4]) %>
+      <% allrank5.push(allrank1[4]+allrank2[0]+allrank3[6]+allrank4[5]) %>
+      <% allrank5.push(allrank1[0]+allrank2[3]+allrank3[4]+allrank4[6]) %>
 
       <% var sorted=allrank5.slice().sort(function(a, b){return b - a});%>
       <% var sougouzyunni5 = allrank5.slice().map(function(x){return sorted.indexOf(x) + 1});%>
