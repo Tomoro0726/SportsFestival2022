@@ -16,10 +16,10 @@
       <th colspan="2">
         基本情報
       </th>
-      <th colspan="8">
+      <th colspan="7">
         得点
       </th>
-      <th colspan="8">
+      <th colspan="7">
         順位
       </th>
       <th colspan="1">
@@ -36,7 +36,6 @@
       <th>5組</th>
       <th>6組</th>
       <th>7組</th>
-      <th>8組</th>
       <th>1組</th>
       <th>2組</th>
       <th>3組</th>
@@ -44,25 +43,24 @@
       <th>5組</th>
       <th>6組</th>
       <th>7組</th>
-      <th>8組</th>
       <th>記録</th>
     </tr>
     <% items.forEach((item)=> {%>
     <!-- 得点一覧 -->
     <% var tokuten=[] %>
-    <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven,item.eight) %>
+    <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven) %>
     <!-- クラスタイム（記録）-->
     <% var time1=[] %>
-    <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku,item.eightkiroku) %>
+    <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku) %>
     <!-- クラスタイム（判定）-->
     <% var time2=[] %>
-    <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc,item.eightc) %>
+    <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc) %>
     <!--減点-->
     <% var genten=[] %>
-    <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp,item.eightp) %>
+    <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp) %>
     <!--半減-->
     <% var hanngen=[] %>
-    <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
+    <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh) %>
     <!--タイム統合処理-->
     <% for (let i = 0; i < tokuten.length; i++) { %>
     <% if (time2[i] !== null) { %>
@@ -80,15 +78,15 @@
     <% } %>
     <!--得点変換処理-->
     <% var hennkann=[] %>
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% hennkann.push(tokuten[ranks[i]-1]) %>
     <% } %>
     <!--得点減点処理-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% hennkann[i]=hennkann[i]-genten[i] %>
     <% } %>
     <!--得点半減処理-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% if (hanngen[i]=="半減") { %>
     <% hennkann[i]=hennkann[i]/2 %>
 
@@ -117,7 +115,6 @@
       <th><%= hennkann[4] %></th>
       <th><%= hennkann[5] %></th>
       <th><%= hennkann[6] %></th>
-      <th><%= hennkann[7] %></th>
 
 
 
@@ -128,7 +125,6 @@
       <th><%=all[4] %></th>
       <th><%=all[5] %></th>
       <th><%=all[6] %></th>
-      <th><%=all[7] %></th>
 
       <th><a href="/resultedit/<%= item.id %>">記録</a></th>
 

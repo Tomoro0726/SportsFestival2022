@@ -46,7 +46,7 @@ app.get("/", (req, res) => {
 });
 app.get("/register", (req, res) => {
   connection.query(
-    'SELECT*FROM tokuten',
+    'SELECT*FROM tokuten2',
     (errow, result) => {
       res.render("register.ejs", {
         items: result
@@ -60,7 +60,7 @@ app.get("/registercreate", (req, res) => {
 });
 app.get("/registeredit/:id", (req, res) => {
   connection.query(
-    'SELECT*FROM tokuten WHERE id=?',
+    'SELECT*FROM tokuten2 WHERE id=?',
     [req.params.id],
     (errow, results) => {
 
@@ -81,8 +81,8 @@ app.post("/registeredit/:id", (req, res) => {
     var hyouka = 0;
   };
   connection.query(
-    'UPDATE tokuten SET name=?,grade=?,one=?,two=?,three=?,four=?,five=?,six=? ,seven=?,eight=?,hyouka=? WHERE id=?',
-    [req.body.name, req.body.grade, req.body.one, req.body.two, req.body.three, req.body.four, req.body.five, req.body.six, req.body.seven, req.body.eight, hyouka, req.params.id],
+    'UPDATE tokuten2 SET name=?,grade=?,one=?,two=?,three=?,four=?,five=?,six=? ,seven=?,hyouka=? WHERE id=?',
+    [req.body.name, req.body.grade, req.body.one, req.body.two, req.body.three, req.body.four, req.body.five, req.body.six, req.body.seven, hyouka, req.params.id],
     (errow, results) => {
       console.log(req);
       console.log(errow);
@@ -92,7 +92,7 @@ app.post("/registeredit/:id", (req, res) => {
 });
 app.post("/registerdelete/:id", (req, res) => {
   connection.query(
-    'DELETE FROM tokuten WHERE id=?',
+    'DELETE FROM tokuten2 WHERE id=?',
     [req.params.id],
     (errow, results) => {
 
@@ -111,8 +111,8 @@ app.post("/registercreate", (req, res) => {
   };
   console.log(hyouka);
   connection.query(
-    'INSERT INTO tokuten (name,grade,one,two,three,four,five,six,seven,eight,hyouka) VALUES (?,?,?,?,?,?,?,?,?,?,?);',
-    [req.body.name, req.body.grade, req.body.one, req.body.two, req.body.three, req.body.four, req.body.five, req.body.six, req.body.seven, req.body.eight, hyouka],
+    'INSERT INTO tokuten2 (name,grade,one,two,three,four,five,six,seven,hyouka) VALUES (?,?,?,?,?,?,?,?,?,?);',
+    [req.body.name, req.body.grade, req.body.one, req.body.two, req.body.three, req.body.four, req.body.five, req.body.six, req.body.seven, hyouka],
     (errow, result) => {
       console.log(errow);
       console.log(req.body);
@@ -123,7 +123,7 @@ app.post("/registercreate", (req, res) => {
 
 app.get("/result", (req, res) => {
   connection.query(
-    'SELECT*FROM tokuten',
+    'SELECT*FROM tokuten2',
     (errow, result) => {
       console.log(result);
       res.render("result.ejs", {
@@ -134,7 +134,7 @@ app.get("/result", (req, res) => {
 });
 app.get("/resultedit/:id", (req, res) => {
   connection.query(
-    'SELECT*FROM tokuten WHERE id=?',
+    'SELECT*FROM tokuten2 WHERE id=?',
     [req.params.id],
     (errow, results) => {
 
@@ -148,7 +148,7 @@ app.get("/resultedit/:id", (req, res) => {
   );
 });
 app.post("/resultedit/:id", (req, res) => {
-  var edit = [req.body.onekiroku, req.body.twokiroku, req.body.threekiroku, req.body.fourkiroku, req.body.fivekiroku, req.body.sixkiroku, req.body.sevenkiroku, req.body.eightkiroku, req.body.onec, req.body.twoc, req.body.threec, req.body.fourc, req.body.fivec, req.body.sixc, req.body.sevenc, req.body.eightc, req.body.onep, req.body.twop, req.body.threep, req.body.fourp, req.body.fivep, req.body.sixp, req.body.sevenp, req.body.eightp, req.body.oneh, req.body.twoh, req.body.threeh, req.body.fourh, req.body.fiveh, req.body.sixh, req.body.sevenh, req.body.eighth, req.body.oneb, req.body.twob, req.body.threeb, req.body.fourb, req.body.fiveb, req.body.sixb, req.body.sevenb, req.body.eightb, req.params.id];
+  var edit = [req.body.onekiroku, req.body.twokiroku, req.body.threekiroku, req.body.fourkiroku, req.body.fivekiroku, req.body.sixkiroku, req.body.sevenkiroku, req.body.onec, req.body.twoc, req.body.threec, req.body.fourc, req.body.fivec, req.body.sixc, req.body.sevenc, req.body.onep, req.body.twop, req.body.threep, req.body.fourp, req.body.fivep, req.body.sixp, req.body.sevenp, req.body.oneh, req.body.twoh, req.body.threeh, req.body.fourh, req.body.fiveh, req.body.sixh, req.body.sevenh, req.body.oneb, req.body.twob, req.body.threeb, req.body.fourb, req.body.fiveb, req.body.sixb, req.body.sevenb, req.params.id];
   for (let i = 0; i < edit.length; i++) {
     if (edit[i] == '') {
       edit[i] = null;
@@ -160,7 +160,7 @@ app.post("/resultedit/:id", (req, res) => {
     }
   };
   connection.query(
-    'UPDATE tokuten SET onekiroku=?,twokiroku=?,threekiroku=?,fourkiroku=?,fivekiroku=?,sixkiroku=?,sevenkiroku=?,eightkiroku=?,onec=?,twoc=?,threec=?,fourc=?,fivec=?,sixc=?,sevenc=?,eightc=?,onep=?,twop=?,threep=?,fourp=?,fivep=?,sixp=?,sevenp=?,eightp=?,oneh=?,twoh=?,threeh=?,fourh=?,fiveh=?,sixh=?,sevenh=?,eighth=?,oneb=?,twob=?,threeb=?,fourb=?,fiveb=?,sixb=?,sevenb=?,eightb=? WHERE id=?',
+    'UPDATE tokuten2 SET onekiroku=?,twokiroku=?,threekiroku=?,fourkiroku=?,fivekiroku=?,sixkiroku=?,sevenkiroku=?,onec=?,twoc=?,threec=?,fourc=?,fivec=?,sixc=?,sevenc=?,onep=?,twop=?,threep=?,fourp=?,fivep=?,sixp=?,sevenp=?,oneh=?,twoh=?,threeh=?,fourh=?,fiveh=?,sixh=?,sevenh=?,oneb=?,twob=?,threeb=?,fourb=?,fiveb=?,sixb=?,sevenb=? WHERE id=?',
     edit,
     (errow, result) => {
 
@@ -172,16 +172,16 @@ app.post("/resultedit/:id", (req, res) => {
 
 app.get("/publication", (req, res) => {
   connection.query(
-    'SELECT*FROM tokuten WHERE grade="H1"',
+    'SELECT*FROM tokuten2 WHERE grade="M1"',
     (errow, result) => {
       connection.query(
-        'SELECT*FROM tokuten WHERE grade="H2"',
+        'SELECT*FROM tokuten2 WHERE grade="M2"',
         (errow, result2) => {
           connection.query(
-            'SELECT*FROM tokuten WHERE grade="H3"',
+            'SELECT*FROM tokuten2 WHERE grade="M3"',
             (errow, result3) => {
               connection.query(
-                'SELECT*FROM color',
+                'SELECT*FROM color2',
                 (errow, result4) => {
                   res.render("publication.ejs", {
                     items: result, items2: result2, items3: result3, items4: result4
@@ -197,7 +197,7 @@ app.get("/publication", (req, res) => {
 });
 app.get("/publication/:id", (req, res) => {
   connection.query(
-    'SELECT*FROM tokuten WHERE id=?', [req.params.id],
+    'SELECT*FROM tokuten2 WHERE id=?', [req.params.id],
     (errow, result) => {
       res.render("publications.ejs", {
         items: result[0]
@@ -208,7 +208,7 @@ app.get("/publication/:id", (req, res) => {
 
 app.get("/colorpublication/:id", (req, res) => {
   connection.query(
-    'SELECT*FROM color WHERE id=?', [req.params.id],
+    'SELECT*FROM color2 WHERE id=?', [req.params.id],
     (errow, result) => {
       res.render("colorpublications.ejs", {
         items: result[0]
@@ -223,7 +223,7 @@ app.get("/ip", (req, res) => {
 
 app.get("/color", (req, res) => {
   connection.query(
-    'SELECT*FROM color',
+    'SELECT*FROM color2',
     (errow, result) => {
       console.log(result);
       res.render("color.ejs", {
@@ -245,8 +245,8 @@ app.post("/colorcreate", (req, res) => {
     var hyouka = 0;
   };
   connection.query(
-    'INSERT INTO color (name,one,two,three,four,five,six,seven,eight,hyouka) VALUES (?,?,?,?,?,?,?,?,?,?);',
-    [req.body.name, req.body.one, req.body.two, req.body.three, req.body.four, req.body.five, req.body.six, req.body.seven, req.body.eight, hyouka],
+    'INSERT INTO color2 (name,one,two,three,four,five,six,seven,hyouka) VALUES (?,?,?,?,?,?,?,?,?);',
+    [req.body.name, req.body.one, req.body.two, req.body.three, req.body.four, req.body.five, req.body.six, req.body.seven, hyouka],
     (errow, result) => {
       console.log(errow);
       console.log(req.body);
@@ -257,7 +257,7 @@ app.post("/colorcreate", (req, res) => {
 
 app.get("/coloredit/:id", (req, res) => {
   connection.query(
-    'SELECT*FROM color WHERE id=?',
+    'SELECT*FROM color2 WHERE id=?',
     [req.params.id],
     (errow, results) => {
 
@@ -278,8 +278,8 @@ app.post("/coloredit/:id", (req, res) => {
     var hyouka = 0;
   };
   connection.query(
-    'UPDATE color SET name=?,one=?,two=?,three=?,four=?,five=?,six=? ,seven=?,eight=?,hyouka=? WHERE id=?',
-    [req.body.name, req.body.one, req.body.two, req.body.three, req.body.four, req.body.five, req.body.six, req.body.seven, req.body.eight, hyouka, req.params.id],
+    'UPDATE color SET name=?,one=?,two=?,three=?,four=?,five=?,six=? ,seven=?,hyouka=? WHERE id=?',
+    [req.body.name, req.body.one, req.body.two, req.body.three, req.body.four, req.body.five, req.body.six, req.body.seven, hyouka, req.params.id],
     (errow, results) => {
       console.log(errow);
       res.redirect("/color");
@@ -289,7 +289,7 @@ app.post("/coloredit/:id", (req, res) => {
 
 app.post("/colordelete/:id", (req, res) => {
   connection.query(
-    'DELETE FROM color WHERE id=?',
+    'DELETE FROM color2 WHERE id=?',
     [req.params.id],
     (errow, results) => {
 
@@ -303,7 +303,7 @@ app.post("/colordelete/:id", (req, res) => {
 
 app.get("/colorresult", (req, res) => {
   connection.query(
-    'SELECT*FROM color',
+    'SELECT*FROM color2',
     (errow, result) => {
       console.log(result);
       res.render("colorresult.ejs", {
@@ -315,7 +315,7 @@ app.get("/colorresult", (req, res) => {
 
 app.get("/colorresultedit/:id", (req, res) => {
   connection.query(
-    'SELECT*FROM color WHERE id=?',
+    'SELECT*FROM color2 WHERE id=?',
     [req.params.id],
     (errow, results) => {
 
@@ -330,7 +330,7 @@ app.get("/colorresultedit/:id", (req, res) => {
 });
 
 app.post("/colorresultedit/:id", (req, res) => {
-  var edit = [req.body.onekiroku, req.body.twokiroku, req.body.threekiroku, req.body.fourkiroku, req.body.fivekiroku, req.body.sixkiroku, req.body.sevenkiroku, req.body.eightkiroku, req.body.onec, req.body.twoc, req.body.threec, req.body.fourc, req.body.fivec, req.body.sixc, req.body.sevenc, req.body.eightc, req.body.onep, req.body.twop, req.body.threep, req.body.fourp, req.body.fivep, req.body.sixp, req.body.sevenp, req.body.eightp, req.body.oneh, req.body.twoh, req.body.threeh, req.body.fourh, req.body.fiveh, req.body.sixh, req.body.sevenh, req.body.eighth, req.body.oneb, req.body.twob, req.body.threeb, req.body.fourb, req.body.fiveb, req.body.sixb, req.body.sevenb, req.body.eightb, req.params.id];
+  var edit = [req.body.onekiroku, req.body.twokiroku, req.body.threekiroku, req.body.fourkiroku, req.body.fivekiroku, req.body.sixkiroku, req.body.sevenkiroku, req.body.onec, req.body.twoc, req.body.threec, req.body.fourc, req.body.fivec, req.body.sixc, req.body.sevenc, req.body.onep, req.body.twop, req.body.threep, req.body.fourp, req.body.fivep, req.body.sixp, req.body.sevenp, req.body.oneh, req.body.twoh, req.body.threeh, req.body.fourh, req.body.fiveh, req.body.sixh, req.body.sevenh, req.body.oneb, req.body.twob, req.body.threeb, req.body.fourb, req.body.fiveb, req.body.sixb, req.body.sevenb, req.params.id];
   for (let i = 0; i < edit.length; i++) {
     if (edit[i] == '') {
       edit[i] = null;
@@ -342,7 +342,7 @@ app.post("/colorresultedit/:id", (req, res) => {
     }
   };
   connection.query(
-    'UPDATE color SET onekiroku=?,twokiroku=?,threekiroku=?,fourkiroku=?,fivekiroku=?,sixkiroku=?,sevenkiroku=?,eightkiroku=?,onec=?,twoc=?,threec=?,fourc=?,fivec=?,sixc=?,sevenc=?,eightc=?,onep=?,twop=?,threep=?,fourp=?,fivep=?,sixp=?,sevenp=?,eightp=?,oneh=?,twoh=?,threeh=?,fourh=?,fiveh=?,sixh=?,sevenh=?,eighth=?,oneb=?,twob=?,threeb=?,fourb=?,fiveb=?,sixb=?,sevenb=?,eightb=? WHERE id=?',
+    'UPDATE color2 SET onekiroku=?,twokiroku=?,threekiroku=?,fourkiroku=?,fivekiroku=?,sixkiroku=?,sevenkiroku=?,onec=?,twoc=?,threec=?,fourc=?,fivec=?,sixc=?,sevenc=?,onep=?,twop=?,threep=?,fourp=?,fivep=?,sixp=?,sevenp=?,oneh=?,twoh=?,threeh=?,fourh=?,fiveh=?,sixh=?,sevenh=?,oneb=?,twob=?,threeb=?,fourb=?,fiveb=?,sixb=?,sevenb=? WHERE id=?',
     edit,
     (errow, result) => {
 

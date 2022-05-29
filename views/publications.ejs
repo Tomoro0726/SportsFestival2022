@@ -20,36 +20,31 @@
   </h1>
   <form action="/resultedit/<%= items.id %>" method="post">
     <table>
-      <% if (items.grade =="H1" ){ %>
-        <%=  %>
-        <%  var color1="red" %>
-        <%  var color2="blue" %>
-        <%  var color3="black" %>
-        <%  var color4="green" %>
-        <%  var color5="yellow" %>
-        <%  var color6="purple" %>
-        <%  var color7="orange" %>
-        <%  var color8="pink" %>
+      <% if (items.grade =="M1" ){ %>
+      <%=  %>
+      <%  var color1="red" %>
+      <%  var color2="blue" %>
+      <%  var color3="black" %>
+      <%  var color4="green" %>
+      <%  var color5="yellow" %>
+      <%  var color6="purple" %>
+      <%  var color7="orange" %>
 
-       <% }else if(items.grade=="H2"){ %>
-        <%  var color8="red" %>
-        <%  var color5="blue" %>
-        <%  var color3="black" %>
-        <%  var color2="green" %>
-        <%  var color6="yellow" %>
-        <%  var color7="purple" %>
-        <%  var color1="orange" %>
-        <%  var color4="pink" %>
-       <% }else if(items.grade=="H3"){ %>
-        <%  var color3="red" %>
-        <%  var color5="blue" %>
-        <%  var color1="black" %>
-        <%  var color4="green" %>
-        <%  var color8="yellow" %>
-        <%  var color7="purple" %>
-        <%  var color2="orange" %>
-        <%  var color6="pink" %>
-       <% } %>
+      <% }else if(items.grade=="M1"){ %>
+      <%  var color5="blue" %>
+      <%  var color3="black" %>
+      <%  var color2="green" %>
+      <%  var color6="yellow" %>
+      <%  var color7="purple" %>
+      <%  var color1="orange" %>
+      <% }else if(items.grade=="M1"){ %>
+      <%  var color3="red" %>
+      <%  var color5="blue" %>
+      <%  var color1="black" %>
+      <%  var color4="green" %>
+      <%  var color7="purple" %>
+      <%  var color2="orange" %>
+      <% } %>
       <tr>
         <th class="<%= color1 %>">1組-記録</th>
         <th class="<%= color2 %>">2組-記録</th>
@@ -58,7 +53,6 @@
         <th class="<%= color5 %>">5組-記録</th>
         <th class="<%= color6 %>">6組-記録</th>
         <th class="<%= color7 %>">7組-記録</th>
-        <th class="<%= color8 %>">8組-記録</th>
 
       </tr>
       <tr>
@@ -118,14 +112,7 @@
 
           <% }; %>
         </th>
-        <th>
-          <% if(items.eightkiroku==null){ %>
-          <%= "未記入" %>
-          <%}else{%>
-          <%= items.eightkiroku%>
 
-          <% }; %>
-        </th>
       </tr>
     </table>
     <table>
@@ -136,7 +123,6 @@
       <th>5組-減点考慮済み記録</th>
       <th>6組-減点考慮済み記録</th>
       <th>7組-減点考慮済み記録</th>
-      <th>8組-減点考慮済み記録</th>
       <tr>
         <th>
           <% if(items.onec==null){ %>
@@ -194,17 +180,7 @@
 
           <% }; %>
         </th>
-        <th>
-          <% if(items.eightc==null){ %>
-          <%= "未記入" %>
-          <%}else{%>
-          <%= items.eighc %>
 
-          <% }; %>
-        </th>
-
-
-      </tr>
     </table>
     <table>
       <tr>
@@ -215,7 +191,6 @@
         <th>5組-減点</th>
         <th>6組-減点</th>
         <th>7組-減点</th>
-        <th>8組-減点</th>
 
       </tr>
       <tr>
@@ -275,14 +250,7 @@
 
           <% }; %>
         </th>
-        <th>
-          <% if(items.eightp==null){ %>
-          <%= 0 %>
-          <%}else{%>
-          <%= items.eightp %>
 
-          <% }; %>
-        </th>
       </tr>
     </table>
     <table>
@@ -294,7 +262,6 @@
         <th>5組-半減</th>
         <th>6組-半減</th>
         <th>7組-半減</th>
-        <th>8組-半減</th>
 
       </tr>
       <tr>
@@ -347,12 +314,7 @@
 
           <% }; %></th>
 
-        <th><% if(items.eighth=="半減"){ %>
-          <%= "半減" %>
-          <%}else{%>
-          <%= "なし" %>
 
-          <% }; %></th>
       </tr>
 
     </table>
@@ -381,13 +343,11 @@
         <th>5組-備考</th>
         <th>6組-備考</th>
         <th>7組-備考</th>
-        <th>8組-備考</th>
       </tr>
       <tr>
         <th class="bikou"><%= items.fiveb %></th>
         <th class="bikou"><%= items.sixb %></th>
         <th class="bikou"><%= items.sevenb %></th>
-        <th class="bikou"><%= items.eightb %></th>
 
       </tr>
     </table>

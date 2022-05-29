@@ -20,7 +20,6 @@
       <th>5位得点</th>
       <th>6位得点</th>
       <th>7位得点</th>
-      <th>8位得点</th>
       <th>評価方式</th>
 
 
@@ -31,9 +30,9 @@
         <th><select class="input select" name="grade">
             <option hidden><%= items.grade %></option>
 
-            <option>H1</option>
-            <option>H2</option>
-            <option>H3</option>
+            <option>M1</option>
+            <option>M2</option>
+            <option>M3</option>
 
 
           </select></th>
@@ -44,7 +43,7 @@
         <th><input type="number" class="input number" name="five" value="<%= items.five %>"></th>
         <th><input type="number" class="input number" name="six" value="<%= items.six %>"></th>
         <th><input type="number" class="input number" name="seven" value="<%= items.seven %>"></th>
-        <th><input type="number" class="input number" name="eight" value="<%= items.eight %>"></th>
+
         <th><select class="input select" value="<%= items.hyouka %>" name="hyouka">
             <% if(items.hyouka==1){ %>
             <% var syouzyunn="selected" %>

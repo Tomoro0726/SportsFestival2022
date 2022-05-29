@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <% if (items.grade =="H1" ){ %>
+  <% if (items.grade =="M1" ){ %>
   <%=  %>
   <%  var color1="red" %>
   <%  var color2="blue" %>
@@ -20,26 +20,21 @@
   <%  var color5="yellow" %>
   <%  var color6="purple" %>
   <%  var color7="orange" %>
-  <%  var color8="pink" %>
 
-  <% }else if(items.grade=="H2"){ %>
-  <%  var color8="red" %>
+  <% }else if(items.grade=="M2"){ %>
   <%  var color5="blue" %>
   <%  var color3="black" %>
   <%  var color2="green" %>
   <%  var color6="yellow" %>
   <%  var color7="purple" %>
   <%  var color1="orange" %>
-  <%  var color4="pink" %>
-  <% }else if(items.grade=="H3"){ %>
+  <% }else if(items.grade=="M3"){ %>
   <%  var color3="red" %>
-  <%  var color8="blue" %>
   <%  var color2="black" %>
   <%  var color4="green" %>
   <%  var color1="yellow" %>
   <%  var color7="purple" %>
   <%  var color5="orange" %>
-  <%  var color6="pink" %>
   <% } %>
 
   <table>
@@ -47,10 +42,10 @@
       <th colspan="2" class="with">
         H1競技結果
       </th>
-      <th colspan="8">
+      <th colspan="7">
         得点
       </th>
-      <th colspan="8">
+      <th colspan="7">
         順位
       </th>
       <th colspan="1" class="with2">
@@ -67,7 +62,6 @@
       <th class="yellow">5組</th>
       <th class="purple">6組</th>
       <th class="orange">7組</th>
-      <th class="pink">8組</th>
       <th class="red">1組</th>
       <th class="blue">2組</th>
       <th class="black">3組</th>
@@ -75,25 +69,24 @@
       <th class="yellow">5組</th>
       <th class="purple">6組</th>
       <th class="orange">7組</th>
-      <th class="pink">8組</th>
       <th>記録</th>
     </tr>
     <% items.forEach((item)=> {%>
     <!-- 得点一覧 -->
     <% var tokuten=[] %>
-    <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven,item.eight) %>
+    <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven) %>
     <!-- クラスタイム（記録）-->
     <% var time1=[] %>
-    <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku,item.eightkiroku) %>
+    <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku) %>
     <!-- クラスタイム（判定）-->
     <% var time2=[] %>
-    <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc,item.eightc) %>
+    <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc) %>
     <!--減点-->
     <% var genten=[] %>
-    <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp,item.eightp) %>
+    <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp) %>
     <!--半減-->
     <% var hanngen=[] %>
-    <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
+    <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh) %>
     <!--タイム統合処理-->
     <% for (let i = 0; i < tokuten.length; i++) { %>
     <% if (time2[i] !== null) { %>
@@ -110,15 +103,15 @@
     <% } %>
     <!--得点変換処理-->
     <% var hennkann=[] %>
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% hennkann.push(tokuten[ranks[i]-1]) %>
     <% } %>
     <!--得点減点処理-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% hennkann[i]=hennkann[i]-genten[i] %>
     <% } %>
     <!--得点半減処理-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% if (hanngen[i]=="半減") { %>
     <% hennkann[i]=hennkann[i]/2 %>
 
@@ -128,7 +121,7 @@
     <% var sorted=hennkann.slice().sort(function(a, b){return b - a});%>
     <% var all = hennkann.slice().map(function(x){return sorted.indexOf(x) + 1});%>
     <!--未記入対策-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% if (time1[i]==null) { %>
     <% hennkann[i]="" %>
     <% all[i]="" %>
@@ -148,7 +141,6 @@
       <th><%= hennkann[4] %></th>
       <th><%= hennkann[5] %></th>
       <th><%= hennkann[6] %></th>
-      <th><%= hennkann[7] %></th>
 
 
 
@@ -159,7 +151,6 @@
       <th><%=all[4] %></th>
       <th><%=all[5] %></th>
       <th><%=all[6] %></th>
-      <th><%=all[7] %></th>
 
       <th class="syousai"><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
 
@@ -179,25 +170,24 @@
       <% var fiveall=0 %>
       <% var sixall=0 %>
       <% var sevenall=0 %>
-      <% var eightall=0 %>
 
       <% for (let i = 0; i < items.length; i++) { %>
       <% var item=items[i] %>
       <!-- 得点一覧 -->
       <% var tokuten=[] %>
-      <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven,item.eight) %>
+      <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven) %>
       <!-- クラスタイム（記録）-->
       <% var time1=[] %>
-      <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku,item.eightkiroku) %>
+      <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku) %>
       <!-- クラスタイム（判定）-->
       <% var time2=[] %>
-      <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc,item.eightc) %>
+      <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc) %>
       <!--減点-->
       <% var genten=[] %>
-      <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp,item.eightp) %>
+      <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp) %>
       <!--半減-->
       <% var hanngen=[] %>
-      <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
+      <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh) %>
 
       <!--タイム統合処理-->
       <% for (let f = 0; f < tokuten.length; f++) { %>
@@ -216,24 +206,24 @@
 
       <!--得点変換処理-->
       <% var hennkann=[] %>
-      <% for (let g = 0; g < 8; g++) { %>
+      <% for (let g = 0; g < 7; g++) { %>
       <% hennkann.push(tokuten[ranks[g]-1]) %>
       <% } %>
 
 
       <!--得点減点処理-->
-      <% for (let h = 0; h < 8; h++) { %>
+      <% for (let h = 0; h < 7; h++) { %>
       <% hennkann[h]=hennkann[h]-genten[h] %>
       <% } %>
       <!--得点半減処理-->
-      <% for (let k = 0; k < 8; k++) { %>
+      <% for (let k = 0; k < 7; k++) { %>
       <% if (hanngen[k]=="半減") { %>
       <% hennkann[k]=hennkann[k]/2 %>
       <% } %>
       <% } %>
 
       <!--未記入対策-->
-      <% for (let n = 0; n < 8; n++) { %>
+      <% for (let n = 0; n < 7; n++) { %>
       <% if (time1[n]==null) { %>
       <% hennkann[n]=0 %>
       <% } %>
@@ -246,7 +236,6 @@
       <% fiveall=fiveall+hennkann[4] %>
       <% sixall=sixall+hennkann[5] %>
       <% sevenall=sevenall+hennkann[6] %>
-      <% eightall=eightall+hennkann[7] %>
 
 
 
@@ -260,10 +249,9 @@
       <th><%= fiveall %></th>
       <th><%= sixall %></th>
       <th><%= sevenall %></th>
-      <th><%= eightall %></th>
 
       <% var allrank1=[]%>
-      <% allrank1.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,eightall)%>
+      <% allrank1.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall)%>
       <% var sorted=allrank1.slice().sort(function(a, b){return b - a});%>
       <% var sougouzyunni1 = allrank1.slice().map(function(x){return sorted.indexOf(x) + 1});%>
       <th><%= sougouzyunni1[0] %></th>
@@ -274,7 +262,6 @@
       <th><%= sougouzyunni1[5] %></th>
       <th><%= sougouzyunni1[6] %></th>
       <th><%= sougouzyunni1[7] %></th>
-      <th><%= sougouzyunni1[8] %></th>
     </tr>
   </table>
   <!--変数リセット-->
@@ -284,10 +271,10 @@
       <th colspan="2" class="with">
         H2競技結果
       </th>
-      <th colspan="8">
+      <th colspan="7">
         得点
       </th>
-      <th colspan="8">
+      <th colspan="7">
         順位
       </th>
       <th colspan="1" class="with2">
@@ -304,7 +291,6 @@
       <th class="blue">5組</th>
       <th class="yellow">6組</th>
       <th class="purple">7組</th>
-      <th class="red">8組</th>
       <th class="orange">1組</th>
       <th class="green">2組</th>
       <th class="black">3組</th>
@@ -312,26 +298,25 @@
       <th class="blue">5組</th>
       <th class="yellow">6組</th>
       <th class="purple">7組</th>
-      <th class="red">8組</th>
       <th>記録</th>
     </tr>
 
     <% items2.forEach((item)=> {%>
     <!-- 得点一覧 -->
     <% var tokuten=[] %>
-    <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven,item.eight) %>
+    <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven) %>
     <!-- クラスタイム（記録）-->
     <% var time1=[] %>
-    <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku,item.eightkiroku) %>
+    <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku) %>
     <!-- クラスタイム（判定）-->
     <% var time2=[] %>
-    <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc,item.eightc) %>
+    <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc) %>
     <!--減点-->
     <% var genten=[] %>
-    <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp,item.eightp) %>
+    <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp) %>
     <!--半減-->
     <% var hanngen=[] %>
-    <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
+    <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh) %>
     <!--タイム統合処理-->
     <% for (let i = 0; i < tokuten.length; i++) { %>
     <% if (time2[i] !== null) { %>
@@ -348,15 +333,15 @@
     <% } %>
     <!--得点変換処理-->
     <% var hennkann=[] %>
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% hennkann.push(tokuten[ranks[i]-1]) %>
     <% } %>
     <!--得点減点処理-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% hennkann[i]=hennkann[i]-genten[i] %>
     <% } %>
     <!--得点半減処理-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% if (hanngen[i]=="半減") { %>
     <% hennkann[i]=hennkann[i]/2 %>
 
@@ -367,7 +352,7 @@
     <% var sorted2=hennkann.slice().sort(function(a, b){return b - a});%>
     <% var all2 = hennkann.slice().map(function(x){return sorted2.indexOf(x) + 1});%>
     <!--未記入対策-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% if (time1[i]==null) { %>
     <% hennkann[i]="" %>
     <% all2[i]="" %>
@@ -387,7 +372,6 @@
       <th><%= hennkann[4] %></th>
       <th><%= hennkann[5] %></th>
       <th><%= hennkann[6] %></th>
-      <th><%= hennkann[7] %></th>
 
 
 
@@ -398,7 +382,6 @@
       <th><%=all2[4] %></th>
       <th><%=all2[5] %></th>
       <th><%=all2[6] %></th>
-      <th><%=all2[7] %></th>
 
       <th class="syousai"><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
 
@@ -419,25 +402,24 @@
       <% var fiveall=0 %>
       <% var sixall=0 %>
       <% var sevenall=0 %>
-      <% var eightall=0 %>
 
       <% for (let i = 0; i < items2.length; i++) { %>
       <% var item=items2[i] %>
       <!-- 得点一覧 -->
       <% var tokuten=[] %>
-      <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven,item.eight) %>
+      <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven) %>
       <!-- クラスタイム（記録）-->
       <% var time1=[] %>
-      <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku,item.eightkiroku) %>
+      <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku) %>
       <!-- クラスタイム（判定）-->
       <% var time2=[] %>
-      <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc,item.eightc) %>
+      <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc) %>
       <!--減点-->
       <% var genten=[] %>
-      <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp,item.eightp) %>
+      <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp) %>
       <!--半減-->
       <% var hanngen=[] %>
-      <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
+      <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh) %>
 
       <!--タイム統合処理-->
       <% for (let f = 0; f < tokuten.length; f++) { %>
@@ -456,24 +438,24 @@
 
       <!--得点変換処理-->
       <% var hennkann1=[] %>
-      <% for (let g = 0; g < 8; g++) { %>
+      <% for (let g = 0; g < 7; g++) { %>
       <% hennkann1.push(tokuten[ranks[g]-1]) %>
       <% } %>
 
 
       <!--得点減点処理-->
-      <% for (let h = 0; h < 8; h++) { %>
+      <% for (let h = 0; h < 7; h++) { %>
       <% hennkann1[h]=hennkann1[h]-genten[h] %>
       <% } %>
       <!--得点半減処理-->
-      <% for (let k = 0; k < 8; k++) { %>
+      <% for (let k = 0; k < 7; k++) { %>
       <% if (hanngen[k]=="半減") { %>
       <% hennkann1[k]=hennkann1[k]/2 %>
       <% } %>
       <% } %>
 
       <!--未記入対策-->
-      <% for (let n = 0; n < 8; n++) { %>
+      <% for (let n = 0; n < 7; n++) { %>
       <% if (time1[n]==null) { %>
       <% hennkann1[n]=0 %>
       <% } %>
@@ -486,7 +468,6 @@
       <% fiveall=fiveall+hennkann1[4] %>
       <% sixall=sixall+hennkann1[5] %>
       <% sevenall=sevenall+hennkann1[6] %>
-      <% eightall=eightall+hennkann1[7] %>
 
 
 
@@ -500,10 +481,9 @@
       <th><%= fiveall %></th>
       <th><%= sixall %></th>
       <th><%= sevenall %></th>
-      <th><%= eightall %></th>
 
       <% var allrank2=[]%>
-      <% allrank2.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,eightall)%>
+      <% allrank2.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,)%>
       <% var sorted=allrank2.slice().sort(function(a, b){return b - a});%>
       <% var sougouzyunni2 = allrank2.slice().map(function(x){return sorted.indexOf(x) + 1});%>
       <th><%= sougouzyunni2[0] %></th>
@@ -513,8 +493,6 @@
       <th><%= sougouzyunni2[4] %></th>
       <th><%= sougouzyunni2[5] %></th>
       <th><%= sougouzyunni2[6] %></th>
-      <th><%= sougouzyunni2[7] %></th>
-      <th><%= sougouzyunni2[8] %></th>
     </tr>
   </table>
   <table>
@@ -522,10 +500,10 @@
       <th colspan="2" class="with">
         H3競技結果
       </th>
-      <th colspan="8">
+      <th colspan="7">
         得点
       </th>
-      <th colspan="8">
+      <th colspan="7">
         順位
       </th>
       <th colspan="1" class="with2">
@@ -542,7 +520,6 @@
       <th class="orange">5組</th>
       <th class="pink">6組</th>
       <th class="purple">7組</th>
-      <th class="blue">8組</th>
       <th class="yellow">1組</th>
       <th class="black">2組</th>
       <th class="red">3組</th>
@@ -550,26 +527,25 @@
       <th class="orange">5組</th>
       <th class="pink">6組</th>
       <th class="purple">7組</th>
-      <th class="blue">8組</th>
       <th>記録</th>
     </tr>
 
     <% items3.forEach((item)=> {%>
     <!-- 得点一覧 -->
     <% var tokuten=[] %>
-    <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven,item.eight) %>
+    <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven) %>
     <!-- クラスタイム（記録）-->
     <% var time1=[] %>
-    <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku,item.eightkiroku) %>
+    <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku) %>
     <!-- クラスタイム（判定）-->
     <% var time2=[] %>
-    <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc,item.eightc) %>
+    <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc) %>
     <!--減点-->
     <% var genten=[] %>
-    <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp,item.eightp) %>
+    <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp) %>
     <!--半減-->
     <% var hanngen=[] %>
-    <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
+    <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh) %>
     <!--タイム統合処理-->
     <% for (let i = 0; i < tokuten.length; i++) { %>
     <% if (time2[i] !== null) { %>
@@ -586,15 +562,15 @@
     <% } %>
     <!--得点変換処理-->
     <% var hennkann=[] %>
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% hennkann.push(tokuten[ranks[i]-1]) %>
     <% } %>
     <!--得点減点処理-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% hennkann[i]=hennkann[i]-genten[i] %>
     <% } %>
     <!--得点半減処理-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% if (hanngen[i]=="半減") { %>
     <% hennkann[i]=hennkann[i]/2 %>
 
@@ -605,7 +581,7 @@
     <% var sorted2=hennkann.slice().sort(function(a, b){return b - a});%>
     <% var all2 = hennkann.slice().map(function(x){return sorted2.indexOf(x) + 1});%>
     <!--未記入対策-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% if (time1[i]==null) { %>
     <% hennkann[i]="" %>
     <% all2[i]="" %>
@@ -625,7 +601,6 @@
       <th><%= hennkann[4] %></th>
       <th><%= hennkann[5] %></th>
       <th><%= hennkann[6] %></th>
-      <th><%= hennkann[7] %></th>
 
 
 
@@ -636,7 +611,6 @@
       <th><%=all2[4] %></th>
       <th><%=all2[5] %></th>
       <th><%=all2[6] %></th>
-      <th><%=all2[7] %></th>
 
       <th class="syousai"><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
 
@@ -657,25 +631,24 @@
       <% var fiveall=0 %>
       <% var sixall=0 %>
       <% var sevenall=0 %>
-      <% var eightall=0 %>
 
       <% for (let i = 0; i < items3.length; i++) { %>
       <% var item=items3[i] %>
       <!-- 得点一覧 -->
       <% var tokuten=[] %>
-      <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven,item.eight) %>
+      <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven) %>
       <!-- クラスタイム（記録）-->
       <% var time1=[] %>
-      <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku,item.eightkiroku) %>
+      <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku) %>
       <!-- クラスタイム（判定）-->
       <% var time2=[] %>
-      <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc,item.eightc) %>
+      <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc) %>
       <!--減点-->
       <% var genten=[] %>
-      <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp,item.eightp) %>
+      <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp) %>
       <!--半減-->
       <% var hanngen=[] %>
-      <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
+      <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh) %>
 
       <!--タイム統合処理-->
       <% for (let f = 0; f < tokuten.length; f++) { %>
@@ -694,24 +667,24 @@
 
       <!--得点変換処理-->
       <% var hennkann1=[] %>
-      <% for (let g = 0; g < 8; g++) { %>
+      <% for (let g = 0; g < 7; g++) { %>
       <% hennkann1.push(tokuten[ranks[g]-1]) %>
       <% } %>
 
 
       <!--得点減点処理-->
-      <% for (let h = 0; h < 8; h++) { %>
+      <% for (let h = 0; h < 7; h++) { %>
       <% hennkann1[h]=hennkann1[h]-genten[h] %>
       <% } %>
       <!--得点半減処理-->
-      <% for (let k = 0; k < 8; k++) { %>
+      <% for (let k = 0; k < 7; k++) { %>
       <% if (hanngen[k]=="半減") { %>
       <% hennkann1[k]=hennkann1[k]/2 %>
       <% } %>
       <% } %>
 
       <!--未記入対策-->
-      <% for (let n = 0; n < 8; n++) { %>
+      <% for (let n = 0; n < 7; n++) { %>
       <% if (time1[n]==null) { %>
       <% hennkann1[n]=0 %>
       <% } %>
@@ -724,7 +697,6 @@
       <% fiveall=fiveall+hennkann1[4] %>
       <% sixall=sixall+hennkann1[5] %>
       <% sevenall=sevenall+hennkann1[6] %>
-      <% eightall=eightall+hennkann1[7] %>
 
 
 
@@ -738,10 +710,9 @@
       <th><%= fiveall %></th>
       <th><%= sixall %></th>
       <th><%= sevenall %></th>
-      <th><%= eightall %></th>
 
       <% var allrank3=[]%>
-      <% allrank3.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,eightall)%>
+      <% allrank3.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall)%>
       <% var sorted=allrank3.slice().sort(function(a, b){return b - a});%>
       <% var sougouzyunni3 = allrank3.slice().map(function(x){return sorted.indexOf(x) + 1});%>
       <th><%= sougouzyunni3[0] %></th>
@@ -751,8 +722,6 @@
       <th><%= sougouzyunni3[4] %></th>
       <th><%= sougouzyunni3[5] %></th>
       <th><%= sougouzyunni3[6] %></th>
-      <th><%= sougouzyunni3[7] %></th>
-      <th><%= sougouzyunni3[8] %></th>
     </tr>
   </table>
   <table>
@@ -761,10 +730,10 @@
       <th colspan="2" class="with">
         色別競技
       </th>
-      <th colspan="8">
+      <th colspan="7">
         得点
       </th>
-      <th colspan="8">
+      <th colspan="7">
         順位
       </th>
       <th colspan="1" class="with2">
@@ -780,7 +749,6 @@
       <th class="color blue">青</th>
       <th class="color purple">紫</th>
       <th class="color black">黒</th>
-      <th class="color pink">ピ</th>
       <th class="color red">赤</th>
       <th class="color orange">オ</th>
       <th class="color yellow">黄</th>
@@ -788,26 +756,25 @@
       <th class="color blue">青</th>
       <th class="color purple">紫</th>
       <th class="color black">黒</th>
-      <th class="color pink">ピ</th>
       <th>記録</th>
     </tr>
 
     <% items4.forEach((item)=> {%>
     <!-- 得点一覧 -->
     <% var tokuten=[] %>
-    <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven,item.eight) %>
+    <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven) %>
     <!-- クラスタイム（記録）-->
     <% var time1=[] %>
-    <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku,item.eightkiroku) %>
+    <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku) %>
     <!-- クラスタイム（判定）-->
     <% var time2=[] %>
-    <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc,item.eightc) %>
+    <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc) %>
     <!--減点-->
     <% var genten=[] %>
-    <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp,item.eightp) %>
+    <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp) %>
     <!--半減-->
     <% var hanngen=[] %>
-    <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
+    <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh) %>
     <!--タイム統合処理-->
     <% for (let i = 0; i < tokuten.length; i++) { %>
     <% if (time2[i] !== null) { %>
@@ -824,15 +791,15 @@
     <% } %>
     <!--得点変換処理-->
     <% var hennkann=[] %>
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% hennkann.push(tokuten[ranks[i]-1]) %>
     <% } %>
     <!--得点減点処理-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% hennkann[i]=hennkann[i]-genten[i] %>
     <% } %>
     <!--得点半減処理-->
-    <% for (let i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < 7; i++) { %>
     <% if (hanngen[i]=="半減") { %>
     <% hennkann[i]=hennkann[i]/2 %>
 
@@ -894,25 +861,24 @@
       <% var fiveall=0 %>
       <% var sixall=0 %>
       <% var sevenall=0 %>
-      <% var eightall=0 %>
 
       <% for (let i = 0; i < items4.length; i++) { %>
       <% var item=items4[i] %>
       <!-- 得点一覧 -->
       <% var tokuten=[] %>
-      <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven,item.eight) %>
+      <% tokuten.push(item.one,item.two,item.three,item.four,item.five,item.six,item.seven) %>
       <!-- クラスタイム（記録）-->
       <% var time1=[] %>
-      <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku,item.eightkiroku) %>
+      <% time1.push(item.onekiroku,item.twokiroku,item.threekiroku,item.fourkiroku,item.fivekiroku,item.sixkiroku,item.sevenkiroku) %>
       <!-- クラスタイム（判定）-->
       <% var time2=[] %>
-      <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc,item.eightc) %>
+      <% time2.push(item.onec,item.twoc,item.threec,item.fourc,item.fivec,item.sixc,item.sevenc) %>
       <!--減点-->
       <% var genten=[] %>
-      <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp,item.eightp) %>
+      <% genten.push(item.onep,item.twop,item.threep,item.fourp,item.fivep,item.sixp,item.sevenp) %>
       <!--半減-->
       <% var hanngen=[] %>
-      <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
+      <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh) %>
 
       <!--タイム統合処理-->
       <% for (let f = 0; f < tokuten.length; f++) { %>
@@ -931,24 +897,24 @@
 
       <!--得点変換処理-->
       <% var hennkann1=[] %>
-      <% for (let g = 0; g < 8; g++) { %>
+      <% for (let g = 0; g < 7; g++) { %>
       <% hennkann1.push(tokuten[ranks[g]-1]) %>
       <% } %>
 
 
       <!--得点減点処理-->
-      <% for (let h = 0; h < 8; h++) { %>
+      <% for (let h = 0; h < 7; h++) { %>
       <% hennkann1[h]=hennkann1[h]-genten[h] %>
       <% } %>
       <!--得点半減処理-->
-      <% for (let k = 0; k < 8; k++) { %>
+      <% for (let k = 0; k < 7; k++) { %>
       <% if (hanngen[k]=="半減") { %>
       <% hennkann1[k]=hennkann1[k]/2 %>
       <% } %>
       <% } %>
 
       <!--未記入対策-->
-      <% for (let n = 0; n < 8; n++) { %>
+      <% for (let n = 0; n < 7; n++) { %>
       <% if (time1[n]==null) { %>
       <% hennkann1[n]=0 %>
       <% } %>
@@ -961,7 +927,6 @@
       <% fiveall=fiveall+hennkann1[4] %>
       <% sixall=sixall+hennkann1[5] %>
       <% sevenall=sevenall+hennkann1[6] %>
-      <% eightall=eightall+hennkann1[7] %>
 
 
 
@@ -975,10 +940,9 @@
       <th><%= fiveall %></th>
       <th><%= sixall %></th>
       <th><%= sevenall %></th>
-      <th><%= eightall %></th>
 
       <% var allrank4=[]%>
-      <% allrank4.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall,eightall)%>
+      <% allrank4.push(oneall,twoall,threeall,fourall,fiveall,sixall,sevenall)%>
       <% var sorted=allrank4.slice().sort(function(a, b){return b - a});%>
       <% var sougouzyunni4 = allrank4.slice().map(function(x){return sorted.indexOf(x) + 1});%>
       <th><%= sougouzyunni4[0] %></th>
@@ -988,8 +952,6 @@
       <th><%= sougouzyunni4[4] %></th>
       <th><%= sougouzyunni4[5] %></th>
       <th><%= sougouzyunni4[6] %></th>
-      <th><%= sougouzyunni4[7] %></th>
-      <th><%= sougouzyunni4[8] %></th>
     </tr>
   </table>
   <table>
@@ -997,10 +959,10 @@
       <th colspan="2" class="with">
         色合計
       </th>
-      <th colspan="8">
+      <th colspan="7">
         得点
       </th>
-      <th colspan="8">
+      <th colspan="7">
         順位
       </th>
     </tr>
@@ -1015,7 +977,6 @@
       <th class="color blue">青</th>
       <th class="color purple">紫</th>
       <th class="color black">黒</th>
-      <th class="color pink">ピ</th>
       <th class="color red">赤</th>
       <th class="color orange">オ</th>
       <th class="color yellow">黄</th>
@@ -1023,7 +984,6 @@
       <th class="color blue">青</th>
       <th class="color purple">紫</th>
       <th class="color black">黒</th>
-      <th class="color pink">ピ</th>
 
 
     </tr>
@@ -1038,7 +998,6 @@
       <th><%= allrank1[1] %></th>
       <th><%= allrank1[5] %></th>
       <th><%= allrank1[2] %></th>
-      <th><%= allrank1[7] %></th>
 
       <th><%= sougouzyunni1[0] %></th>
       <th><%= sougouzyunni1[6] %></th>
@@ -1047,7 +1006,6 @@
       <th><%= sougouzyunni1[1] %></th>
       <th><%= sougouzyunni1[5] %></th>
       <th><%= sougouzyunni1[2] %></th>
-      <th><%= sougouzyunni1[7] %></th>
 
 
     </tr>
@@ -1055,43 +1013,43 @@
       <th colspan="2">
         H2
       </th>
-      <th><%= allrank2[7] %></th>
       <th><%= allrank2[0] %></th>
       <th><%= allrank2[5] %></th>
       <th><%= allrank2[1] %></th>
       <th><%= allrank2[4] %></th>
       <th><%= allrank2[6] %></th>
       <th><%= allrank2[2] %></th>
-      <th><%= allrank2[3] %></th>
-      <th><%= sougouzyunni2[7] %></th>
+      <th><%= allrank2[2] %></th>
+
       <th><%= sougouzyunni2[0] %></th>
       <th><%= sougouzyunni2[6] %></th>
       <th><%= sougouzyunni2[2] %></th>
       <th><%= sougouzyunni2[5] %></th>
-      <th><%= sougouzyunni2[7] %></th>
       <th><%= sougouzyunni2[3] %></th>
-      <th><%= sougouzyunni2[4] %></th>
+      <th><%= sougouzyunni2[3] %></th>
+      <th><%= sougouzyunni2[3] %></th>
+
     </tr>
     <tr>
       <th colspan="2">
         H3
       </th>
-      <th><%= allrank3[2] %></th>
-      <th><%= allrank3[4] %></th>
-      <th><%= allrank3[0] %></th>
-      <th><%= allrank3[3] %></th>
-      <th><%= allrank3[7] %></th>
-      <th><%= allrank3[6] %></th>
-      <th><%= allrank3[1] %></th>
-      <th><%= allrank3[5] %></th>
-      <th><%= sougouzyunni3[2] %></th>
-      <th><%= sougouzyunni3[4] %></th>
-      <th><%= sougouzyunni3[0] %></th>
-      <th><%= sougouzyunni3[3] %></th>
-      <th><%= sougouzyunni3[7] %></th>
-      <th><%= sougouzyunni3[6] %></th>
-      <th><%= sougouzyunni3[1] %></th>
-      <th><%= sougouzyunni3[7] %></th>
+      <th><%= allrank2[0] %></th>
+      <th><%= allrank2[5] %></th>
+      <th><%= allrank2[1] %></th>
+      <th><%= allrank2[4] %></th>
+      <th><%= allrank2[6] %></th>
+      <th><%= allrank2[2] %></th>
+      <th><%= allrank2[2] %></th>
+
+      <th><%= sougouzyunni2[0] %></th>
+      <th><%= sougouzyunni2[6] %></th>
+      <th><%= sougouzyunni2[2] %></th>
+      <th><%= sougouzyunni2[5] %></th>
+      <th><%= sougouzyunni2[3] %></th>
+      <th><%= sougouzyunni2[3] %></th>
+      <th><%= sougouzyunni2[3] %></th>
+
     </tr>
     <tr>
       <th colspan="2">
@@ -1104,7 +1062,6 @@
       <th><%= allrank4[4] %></th>
       <th><%= allrank4[5] %></th>
       <th><%= allrank4[6] %></th>
-      <th><%= allrank4[7] %></th>
       <th><%= sougouzyunni4[0] %></th>
       <th><%= sougouzyunni4[1] %></th>
       <th><%= sougouzyunni4[2] %></th>
@@ -1112,7 +1069,6 @@
       <th><%= sougouzyunni4[4] %></th>
       <th><%= sougouzyunni4[5] %></th>
       <th><%= sougouzyunni4[6] %></th>
-      <th><%= sougouzyunni4[7] %></th>
     </tr>
     <tr>
       <th colspan="2">
@@ -1126,7 +1082,6 @@
       <th><%= allrank1[1]+allrank2[4]+allrank3[7]+allrank4[4] %></th>
       <th><%= allrank1[5]+allrank2[6]+allrank3[6]+allrank4[5] %></th>
       <th><%= allrank1[2]+allrank2[2]+allrank3[1]+allrank4[6] %></th>
-      <th><%= allrank1[7]+allrank2[3]+allrank3[5]+allrank4[7] %></th>
       <% var allrank5=[]%>
 
       <% allrank5.push(allrank1[0]+allrank2[7]+allrank3[2]+allrank4[0]) %>
@@ -1136,7 +1091,6 @@
       <% allrank5.push(allrank1[1]+allrank2[4]+allrank3[7]+allrank4[4]) %>
       <% allrank5.push(allrank1[5]+allrank2[6]+allrank3[6]+allrank4[5]) %>
       <% allrank5.push(allrank1[2]+allrank2[2]+allrank3[1]+allrank4[6]) %>
-      <% allrank5.push(allrank1[7]+allrank2[3]+allrank3[5]+allrank4[7]) %>
 
       <% var sorted=allrank5.slice().sort(function(a, b){return b - a});%>
       <% var sougouzyunni5 = allrank5.slice().map(function(x){return sorted.indexOf(x) + 1});%>
@@ -1147,7 +1101,6 @@
       <th><%= sougouzyunni5[4] %></th>
       <th><%= sougouzyunni5[5] %></th>
       <th><%= sougouzyunni5[6] %></th>
-      <th><%= sougouzyunni5[7] %></th>
     </tr>
 
 

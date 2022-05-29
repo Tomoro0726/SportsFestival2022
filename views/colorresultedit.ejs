@@ -28,7 +28,6 @@
         <th>5組-記録</th>
         <th>6組-記録</th>
         <th>7組-記録</th>
-        <th>8組-記録</th>
 
       </tr>
       <tr>
@@ -39,7 +38,7 @@
         <th><input type="number" class="input" step="0.00001" name="fivekiroku" value="<%= items.fivekiroku %>"></th>
         <th><input type="number" class="input" step="0.00001" name="sixkiroku" value="<%= items.sixkiroku %>"></th>
         <th><input type="number" class="input" step="0.00001" name="sevenkiroku" value="<%= items.sevenkiroku %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="eightkiroku" value="<%= items.eightkiroku %>"></th>
+
 
       </tr>
     </table>
@@ -52,7 +51,6 @@
         <th>5組-減点考慮済み記録</th>
         <th>6組-減点考慮済み記録</th>
         <th>7組-減点考慮済み記録</th>
-        <th>8組-減点考慮済み記録</th>
 
       </tr>
       <tr>
@@ -63,7 +61,7 @@
         <th><input type="number" class="input" step="0.00001" name="fivec" value="<%= items.fivec %>"></th>
         <th><input type="number" class="input" step="0.00001" name="sixc" value="<%= items.sixc %>"></th>
         <th><input type="number" class="input" step="0.00001" name="sevenc" value="<%= items.sevenc %>"></th>
-        <th><input type="number" class="input" step="0.00001" name="eightc" value="<%= items.eightc %>"></th>
+
       </tr>
     </table>
     <table>
@@ -75,7 +73,6 @@
         <th>5組-減点</th>
         <th>6組-減点</th>
         <th>7組-減点</th>
-        <th>8組-減点</th>
 
       </tr>
       <tr>
@@ -86,7 +83,7 @@
         <th><input type="number" class="input" name="fivep" value="<%= items.fivep %>"></th>
         <th><input type="number" class="input" name="sixp" value="<%= items.sixp %>"></th>
         <th><input type="number" class="input" name="sevenp" value="<%= items.sevenp %>"></th>
-        <th><input type="number" class="input" name="eightp" value="<%= items.eightp %>"></th>
+
       </tr>
     </table>
     <table>
@@ -98,12 +95,11 @@
         <th>5組-半減</th>
         <th>6組-半減</th>
         <th>7組-半減</th>
-        <th>8組-半減</th>
 
       </tr>
       <tr>
         <th><select class="input select" name="oneh">
-          <% var ngen=null %>
+            <% var ngen=null %>
             <% var gen=null %>
             <% if(items.oneh=="半減"){ %>
             <% var gen="selected" %>
@@ -117,8 +113,8 @@
                 <option></option>
           </select></th>
         <th><select class="input select" name="twoh">
-          <% var ngen=null %>
-          <% var gen=null %>
+            <% var ngen=null %>
+            <% var gen=null %>
             <% if(items.twoh=="半減"){ %>
             <% var gen="selected" %>
             <%}else if(items.twoh==""){%>
@@ -132,8 +128,8 @@
 
           </select></th>
         <th><select class="input select" name="threeh">
-          <% var ngen=null %>
-          <% var gen=null %>
+            <% var ngen=null %>
+            <% var gen=null %>
             <% if(items.threeh=="半減"){ %>
             <% var gen="selected" %>
             <%}else if(items.threeh==""){%>
@@ -147,8 +143,8 @@
 
           </select></th>
         <th><select class="input select" name="fourh">
-          <% var ngen=null %>
-          <% var gen=null %>
+            <% var ngen=null %>
+            <% var gen=null %>
             <% if(items.fourh=="半減"){ %>
             <% var gen="selected" %>
             <%}else if(items.fourh==""){%>
@@ -162,8 +158,8 @@
 
           </select></th>
         <th><select class="input select" name="fiveh">
-          <% var ngen=null %>
-          <% var gen=null %>
+            <% var ngen=null %>
+            <% var gen=null %>
             <% if(items.fiveh=="半減"){ %>
             <% var gen="selected" %>
             <%}else if(items.fiveh==""){%>
@@ -177,8 +173,8 @@
 
           </select></th>
         <th><select class="input select" name="sixh">
-          <% var ngen=null %>
-          <% var gen=null %>
+            <% var ngen=null %>
+            <% var gen=null %>
             <% if(items.sixh=="半減"){ %>
             <% var gen="selected" %>
             <%}else if(items.sixh==""){%>
@@ -192,8 +188,8 @@
 
           </select></th>
         <th><select class="input select" name="sevenh">
-          <% var ngen=null %>
-          <% var gen=null %>
+            <% var ngen=null %>
+            <% var gen=null %>
             <% if(items.sevenh=="半減"){ %>
             <% var gen="selected" %>
             <%}else if(items.sevenh==""){%>
@@ -206,21 +202,7 @@
                 <option></option>
 
           </select></th>
-        <th><select class="input select" name="eighth">
-          <% var ngen=null %>
-          <% var gen=null %>
-            <% if(items.eighth=="半減"){ %>
-            <% var gen="selected" %>
-            <%}else if(items.eighth==""){%>
-            <% var ngen="selected" %>
 
-            <% }; %>
-            <option<%= gen %>>
-              </option>
-              <option<%= ngen %>>半減</option>
-                <option></option>
-
-          </select></th>
       </tr>
     </table>
     <table>
@@ -244,13 +226,12 @@
         <th>5組-備考</th>
         <th>6組-備考</th>
         <th>7組-備考</th>
-        <th>8組-備考</th>
       </tr>
       <tr>
         <th><textarea class="bikou" name="fiveb" value="<%= items.fiveb %>"><%= items.fiveb %></textarea></th>
         <th><textarea class="bikou" name="sixb" value="<%= items.sixb %>"><%= items.sixb %></textarea></th>
         <th><textarea class="bikou" name="sevenb" value="<%= items.sevenb %>"><%= items.sevenb %></textarea></th>
-        <th><textarea class="bikou" name="eightb" value="<%= items.eightb %>"><%= items.eightb %></textarea></th>
+
 
       </tr>
     </table>
