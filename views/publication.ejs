@@ -5,42 +5,42 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>得点登録</title>
+  <title>結果の閲覧</title>
 
   <link rel="stylesheet" href="/css/publication.css">
 </head>
 
 <body>
   <% if (items.grade =="H1" ){ %>
-    <%=  %>
-    <%  var color1="red" %>
-    <%  var color2="blue" %>
-    <%  var color3="black" %>
-    <%  var color4="green" %>
-    <%  var color5="yellow" %>
-    <%  var color6="purple" %>
-    <%  var color7="orange" %>
-    <%  var color8="pink" %>
+  <%=  %>
+  <%  var color1="red" %>
+  <%  var color2="blue" %>
+  <%  var color3="black" %>
+  <%  var color4="green" %>
+  <%  var color5="yellow" %>
+  <%  var color6="purple" %>
+  <%  var color7="orange" %>
+  <%  var color8="pink" %>
 
-   <% }else if(items.grade=="H2"){ %>
-    <%  var color8="red" %>
-    <%  var color5="blue" %>
-    <%  var color3="black" %>
-    <%  var color2="green" %>
-    <%  var color6="yellow" %>
-    <%  var color7="purple" %>
-    <%  var color1="orange" %>
-    <%  var color4="pink" %>
-   <% }else if(items.grade=="H3"){ %>
-    <%  var color3="red" %>
-    <%  var color8="blue" %>
-    <%  var color2="black" %>
-    <%  var color4="green" %>
-    <%  var color1="yellow" %>
-    <%  var color7="purple" %>
-    <%  var color5="orange" %>
-    <%  var color6="pink" %>
-   <% } %>
+  <% }else if(items.grade=="H2"){ %>
+  <%  var color8="red" %>
+  <%  var color5="blue" %>
+  <%  var color3="black" %>
+  <%  var color2="green" %>
+  <%  var color6="yellow" %>
+  <%  var color7="purple" %>
+  <%  var color1="orange" %>
+  <%  var color4="pink" %>
+  <% }else if(items.grade=="H3"){ %>
+  <%  var color3="red" %>
+  <%  var color8="blue" %>
+  <%  var color2="black" %>
+  <%  var color4="green" %>
+  <%  var color1="yellow" %>
+  <%  var color7="purple" %>
+  <%  var color5="orange" %>
+  <%  var color6="pink" %>
+  <% } %>
 
   <table>
     <tr>
@@ -53,7 +53,7 @@
       <th colspan="8">
         順位
       </th>
-      <th colspan="1"class="with2">
+      <th colspan="1" class="with2">
         詳細閲覧ボタン
       </th>
     </tr>
@@ -161,7 +161,7 @@
       <th><%=all[6] %></th>
       <th><%=all[7] %></th>
 
-      <th  class="syousai"><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
+      <th class="syousai"><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
 
 
 
@@ -400,7 +400,7 @@
       <th><%=all2[6] %></th>
       <th><%=all2[7] %></th>
 
-      <th  class="syousai"><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
+      <th class="syousai"><a href="/publication/<%= item.id %>">詳細閲覧</a></th>
 
 
 
@@ -1024,8 +1024,8 @@
       <th class="color purple">紫</th>
       <th class="color black">黒</th>
       <th class="color pink">ピ</th>
-      
-      
+
+
     </tr>
     <tr>
       <th colspan="2">
@@ -1128,7 +1128,7 @@
       <th><%= allrank1[2]+allrank2[2]+allrank3[1]+allrank4[6] %></th>
       <th><%= allrank1[7]+allrank2[3]+allrank3[5]+allrank4[7] %></th>
       <% var allrank5=[]%>
-      
+
       <% allrank5.push(allrank1[0]+allrank2[7]+allrank3[2]+allrank4[0]) %>
       <% allrank5.push(allrank1[6]+allrank2[0]+allrank3[4]+allrank4[1]) %>
       <% allrank5.push(allrank1[4]+allrank2[5]+allrank3[0]+allrank4[2]) %>

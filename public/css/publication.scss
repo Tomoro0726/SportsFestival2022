@@ -13,64 +13,72 @@ body {
 
 
     tr {
-      .red{
+      .red {
         color: #FFFFFF;
-        background-color: #FF0000; 
-        
-      }
-      .blue{
-        color: #FFFFFF;
-        background-color: #0000ff; 
-        
+        background-color: #FF0000;
 
       }
-      .green{
+
+      .blue {
         color: #FFFFFF;
-        background-color: #34a853; 
-        
+        background-color: #0000ff;
+
 
       }
-      .orange{
+
+      .green {
         color: #FFFFFF;
-        background-color: #ff9900; 
-        
+        background-color: #34a853;
+
 
       }
-      .yellow{
+
+      .orange {
         color: #FFFFFF;
-        background-color: #f1c232; 
-        
+        background-color: #ff9900;
+
 
       }
-      .purple{
+
+      .yellow {
         color: #FFFFFF;
-        background-color: #9900ff; 
-        
+        background-color: #f1c232;
+
 
       }
-      .black{
+
+      .purple {
         color: #FFFFFF;
-        background-color: #000000; 
-        
+        background-color: #9900ff;
+
 
       }
-      .pink{
-        color: #FFFFFF;
-        
 
-        background-color: #ff00ff; 
+      .black {
+        color: #FFFFFF;
+        background-color: #000000;
+
+
       }
-      .syousai{
+
+      .pink {
+        color: #FFFFFF;
+
+
+        background-color: #ff00ff;
+      }
+
+      .syousai {
         width: 10%;
       }
-      
-      
+
+
       th {
         border: 2px solid #000000;
         font-size: 1vw;
         padding: 1px;
-        
-        
+
+
         .input {
           border: none;
           outline: none;
@@ -92,13 +100,14 @@ body {
 
 
       }
+
       .with {
         width: 7vw;
-        
+
       }
+
       .with2 {
         width: 7vw;
-        background-color: #FF0000;
       }
 
     }
