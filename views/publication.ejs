@@ -97,7 +97,7 @@
     <!--タイム統合処理-->
     <% for (let i = 0; i < tokuten.length; i++) { %>
     <% if (time2[i] !== null) { %>
-    <% time1[i]=time2[i]+time1[i] %>
+    <% time1[i]=parseFloat(time2[i])+parseFloat(time1[i]) %>
     <% } %>
     <% } %>
     <!--順位処理-->
@@ -198,11 +198,11 @@
       <!--半減-->
       <% var hanngen=[] %>
       <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
-
       <!--タイム統合処理-->
-      <% for (let f = 0; f < tokuten.length; f++) { %>
-      <% if (time2[f] !== null) { %>
-      <% time1[f]=time2[f]+time1[f] %>
+      <% for (let i = 0; i < tokuten.length; i++) { %>
+      <% if (time2[i] !== null) { %>
+      <% time1[i]=parseFloat(time2[i])+parseFloat(time1[i]) %>
+
       <% } %>
       <% } %>
       <!--順位処理-->
@@ -213,31 +213,35 @@
       <% var sorted=time1.slice().sort(function(a, b){return a - b});%>
       <% var ranks = time1.slice().map(function(x){return sorted.indexOf(x) + 1});%>
       <% } %>
-
       <!--得点変換処理-->
       <% var hennkann=[] %>
-      <% for (let g = 0; g < 8; g++) { %>
-      <% hennkann.push(tokuten[ranks[g]-1]) %>
+      <% for (let i = 0; i < 8; i++) { %>
+      <% hennkann.push(tokuten[ranks[i]-1]) %>
       <% } %>
-
-
       <!--得点減点処理-->
-      <% for (let h = 0; h < 8; h++) { %>
-      <% hennkann[h]=hennkann[h]-genten[h] %>
+      <% for (let i = 0; i < 8; i++) { %>
+      <% hennkann[i]=hennkann[i]-genten[i] %>
       <% } %>
       <!--得点半減処理-->
-      <% for (let k = 0; k < 8; k++) { %>
-      <% if (hanngen[k]=="半減") { %>
-      <% hennkann[k]=hennkann[k]/2 %>
+      <% for (let i = 0; i < 8; i++) { %>
+      <% if (hanngen[i]=="半減") { %>
+      <% hennkann[i]=hennkann[i]/2 %>
+
+      <% } %>
+      <% } %>
+      <!--総合順位-->
+      <% var sorted=hennkann.slice().sort(function(a, b){return b - a});%>
+      <% var all = hennkann.slice().map(function(x){return sorted.indexOf(x) + 1});%>
+      <!--未記入対策-->
+      <% for (let i = 0; i < 8; i++) { %>
+      <% if (time1[i]==null) { %>
+      <% hennkann[i]="" %>
+      <% all[i]="" %>
+
       <% } %>
       <% } %>
 
-      <!--未記入対策-->
-      <% for (let n = 0; n < 8; n++) { %>
-      <% if (time1[n]==null) { %>
-      <% hennkann[n]=0 %>
-      <% } %>
-      <% } %>
+
       <!--合計算出-->
       <% oneall=oneall+hennkann[0] %>
       <% twoall=twoall+hennkann[1] %>
@@ -251,7 +255,6 @@
 
 
       <% } %>
-
       <th colspan="2">合計</th>
       <th><%= oneall %></th>
       <th><%= twoall %></th>
@@ -278,6 +281,7 @@
     </tr>
   </table>
   <!--変数リセット-->
+
 
   <table>
     <tr>
@@ -335,7 +339,7 @@
     <!--タイム統合処理-->
     <% for (let i = 0; i < tokuten.length; i++) { %>
     <% if (time2[i] !== null) { %>
-    <% time1[i]=time2[i]+time1[i] %>
+    <% time1[i]=parseFloat(time2[i])+parseFloat(time1[i]) %>
     <% } %>
     <% } %>
     <!--順位処理-->
@@ -438,11 +442,11 @@
       <!--半減-->
       <% var hanngen=[] %>
       <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
-
       <!--タイム統合処理-->
-      <% for (let f = 0; f < tokuten.length; f++) { %>
-      <% if (time2[f] !== null) { %>
-      <% time1[f]=time2[f]+time1[f] %>
+      <% for (let i = 0; i < tokuten.length; i++) { %>
+      <% if (time2[i] !== null) { %>
+      <% time1[i]=parseFloat(time2[i])+parseFloat(time1[i]) %>
+
       <% } %>
       <% } %>
       <!--順位処理-->
@@ -453,29 +457,31 @@
       <% var sorted=time1.slice().sort(function(a, b){return a - b});%>
       <% var ranks = time1.slice().map(function(x){return sorted.indexOf(x) + 1});%>
       <% } %>
-
       <!--得点変換処理-->
       <% var hennkann1=[] %>
-      <% for (let g = 0; g < 8; g++) { %>
-      <% hennkann1.push(tokuten[ranks[g]-1]) %>
+      <% for (let i = 0; i < 8; i++) { %>
+      <% hennkann1.push(tokuten[ranks[i]-1]) %>
       <% } %>
-
-
       <!--得点減点処理-->
-      <% for (let h = 0; h < 8; h++) { %>
-      <% hennkann1[h]=hennkann1[h]-genten[h] %>
+      <% for (let i = 0; i < 8; i++) { %>
+      <% hennkann1[i]=hennkann1[i]-genten[i] %>
       <% } %>
       <!--得点半減処理-->
-      <% for (let k = 0; k < 8; k++) { %>
-      <% if (hanngen[k]=="半減") { %>
-      <% hennkann1[k]=hennkann1[k]/2 %>
-      <% } %>
-      <% } %>
+      <% for (let i = 0; i < 8; i++) { %>
+      <% if (hanngen[i]=="半減") { %>
+      <% hennkann1[i]=hennkann1[i]/2 %>
 
+      <% } %>
+      <% } %>
+      <!--総合順位-->
+      <% var sorted=hennkann1.slice().sort(function(a, b){return b - a});%>
+      <% var all = hennkann1.slice().map(function(x){return sorted.indexOf(x) + 1});%>
       <!--未記入対策-->
-      <% for (let n = 0; n < 8; n++) { %>
-      <% if (time1[n]==null) { %>
-      <% hennkann1[n]=0 %>
+      <% for (let i = 0; i < 8; i++) { %>
+      <% if (time1[i]==null) { %>
+      <% hennkann1[i]="" %>
+      <% all[i]="" %>
+
       <% } %>
       <% } %>
       <!--合計算出-->
@@ -573,7 +579,7 @@
     <!--タイム統合処理-->
     <% for (let i = 0; i < tokuten.length; i++) { %>
     <% if (time2[i] !== null) { %>
-    <% time1[i]=time2[i]+time1[i] %>
+    <% time1[i]=parseFloat(time2[i])+parseFloat(time1[i]) %>
     <% } %>
     <% } %>
     <!--順位処理-->
@@ -676,11 +682,11 @@
       <!--半減-->
       <% var hanngen=[] %>
       <% hanngen.push(item.oneh,item.twoh,item.threeh,item.fourh,item.fiveh,item.sixh,item.sevenh,item.eighth) %>
-
       <!--タイム統合処理-->
-      <% for (let f = 0; f < tokuten.length; f++) { %>
-      <% if (time2[f] !== null) { %>
-      <% time1[f]=time2[f]+time1[f] %>
+      <% for (let i = 0; i < tokuten.length; i++) { %>
+      <% if (time2[i] !== null) { %>
+      <% time1[i]=parseFloat(time2[i])+parseFloat(time1[i]) %>
+
       <% } %>
       <% } %>
       <!--順位処理-->
@@ -691,40 +697,43 @@
       <% var sorted=time1.slice().sort(function(a, b){return a - b});%>
       <% var ranks = time1.slice().map(function(x){return sorted.indexOf(x) + 1});%>
       <% } %>
-
       <!--得点変換処理-->
-      <% var hennkann1=[] %>
-      <% for (let g = 0; g < 8; g++) { %>
-      <% hennkann1.push(tokuten[ranks[g]-1]) %>
+      <% var hennkann2=[] %>
+      <% for (let i = 0; i < 8; i++) { %>
+      <% hennkann2.push(tokuten[ranks[i]-1]) %>
       <% } %>
-
-
       <!--得点減点処理-->
-      <% for (let h = 0; h < 8; h++) { %>
-      <% hennkann1[h]=hennkann1[h]-genten[h] %>
+      <% for (let i = 0; i < 8; i++) { %>
+      <% hennkann2[i]=hennkann2[i]-genten[i] %>
       <% } %>
       <!--得点半減処理-->
-      <% for (let k = 0; k < 8; k++) { %>
-      <% if (hanngen[k]=="半減") { %>
-      <% hennkann1[k]=hennkann1[k]/2 %>
+      <% for (let i = 0; i < 8; i++) { %>
+      <% if (hanngen[i]=="半減") { %>
+      <% hennkann2[i]=hennkann2[i]/2 %>
+
+      <% } %>
+      <% } %>
+      <!--総合順位-->
+      <% var sorted=hennkann2.slice().sort(function(a, b){return b - a});%>
+      <% var all = hennkann2.slice().map(function(x){return sorted.indexOf(x) + 1});%>
+      <!--未記入対策-->
+      <% for (let i = 0; i < 8; i++) { %>
+      <% if (time1[i]==null) { %>
+      <% hennkann2[i]="" %>
+      <% all[i]="" %>
+
       <% } %>
       <% } %>
 
-      <!--未記入対策-->
-      <% for (let n = 0; n < 8; n++) { %>
-      <% if (time1[n]==null) { %>
-      <% hennkann1[n]=0 %>
-      <% } %>
-      <% } %>
       <!--合計算出-->
-      <% oneall=oneall+hennkann1[0] %>
-      <% twoall=twoall+hennkann1[1] %>
-      <% threeall=threeall+hennkann1[2] %>
-      <% fourall=fourall+hennkann1[3] %>
-      <% fiveall=fiveall+hennkann1[4] %>
-      <% sixall=sixall+hennkann1[5] %>
-      <% sevenall=sevenall+hennkann1[6] %>
-      <% eightall=eightall+hennkann1[7] %>
+      <% oneall=oneall+hennkann2[0] %>
+      <% twoall=twoall+hennkann2[1] %>
+      <% threeall=threeall+hennkann2[2] %>
+      <% fourall=fourall+hennkann2[3] %>
+      <% fiveall=fiveall+hennkann2[4] %>
+      <% sixall=sixall+hennkann2[5] %>
+      <% sevenall=sevenall+hennkann2[6] %>
+      <% eightall=eightall+hennkann2[7] %>
 
 
 
@@ -811,7 +820,7 @@
     <!--タイム統合処理-->
     <% for (let i = 0; i < tokuten.length; i++) { %>
     <% if (time2[i] !== null) { %>
-    <% time1[i]=time2[i]+time1[i] %>
+    <% time1[i]=parseFloat(time2[i])+parseFloat(time1[i]) %>
     <% } %>
     <% } %>
     <!--順位処理-->
@@ -917,7 +926,7 @@
       <!--タイム統合処理-->
       <% for (let f = 0; f < tokuten.length; f++) { %>
       <% if (time2[f] !== null) { %>
-      <% time1[f]=time2[f]+time1[f] %>
+      <% time1[i]=parseFloat(time2[i])+parseFloat(time1[i]) %>
       <% } %>
       <% } %>
       <!--順位処理-->

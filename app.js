@@ -1,8 +1,7 @@
-const e = require("express");
 const express = require("express");
 const app = express();
 app.use(express.static("public"));
-const mysql = require("mysql2");
+const mysql = require("mysql");
 var os = require('os');
 console.log(getLocalAddress());
 
@@ -36,8 +35,8 @@ app.use(
 
 const connection = mysql.createConnection({
   host: "localhost",
-  user: "newuser",
-  password: "password",
+  user: "root",
+  password: "4460726tomoro",
   database: "sports"
 });
 
